@@ -684,3 +684,31 @@ body.tone-deep .bar__c{color:var(--sun)}
 .deck iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .deck__n{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;
   color:var(--drift);margin-top:12px}
+
+/* ============================================================
+   v9 — portfolio by experience, realistic phone, view counts
+   ============================================================ */
+
+#pieces .grp{margin-top:clamp(52px,6.5vw,96px)}
+#pieces .grp:first-of-type{margin-top:clamp(10px,1.5vw,20px)}
+.grp__h{align-items:baseline}
+.grp__go{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.11em;
+  text-transform:uppercase;text-decoration:none;color:var(--deep-2);white-space:nowrap}
+.grp__go:hover{color:var(--deep)}
+@media(max-width:620px){.grp__go{margin-left:0}}
+
+/* realistic phone, not maroon */
+.phone{background:#1C1C1E;padding:8px;border-radius:34px;
+  box-shadow:0 0 0 2px #3A3A3C, 0 0 0 3px #1C1C1E, 0 20px 44px -20px rgba(60,50,45,.45)}
+.phone video{border-radius:27px}
+.phone__i{top:15px;width:56px;height:16px;background:#000;border-radius:99px}
+.tile--phone .tile__cap{left:8px;right:8px;bottom:8px;border-radius:0 0 27px 27px}
+
+/* view count chip, reads like a real post */
+.views{position:absolute;left:14px;bottom:14px;z-index:3;display:flex;align-items:center;gap:6px;
+  padding:6px 10px;border-radius:99px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);
+  color:#fff;font-family:var(--mono);font-size:10px;letter-spacing:.05em;font-weight:600}
+.views::before{content:"";width:11px;height:8px;border:1.5px solid #fff;border-radius:50%/62%;
+  box-shadow:inset 0 0 0 1.5px #fff}
+.tile--phone .views{left:20px;bottom:20px}
+.tile:hover .views{opacity:0;transition:opacity .25s}
