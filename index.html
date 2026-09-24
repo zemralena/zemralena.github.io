@@ -3,178 +3,767 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Zemra Lena — Marketing</title>
-<meta name="description" content="I&#x27;m a proud Penn State marketing graduate. I&#x27;ve worked in social, content, email, event planning and analytics, and I shoot and write most of it myself">
-<meta property="og:title" content="Zemra Lena — Marketing">
-<meta property="og:description" content="I&#x27;m a proud Penn State marketing graduate. I&#x27;ve worked in social, content, email, event planning and analytics, and I shoot and write most of it myself">
+<title>Zemra Lena | Marketing Portfolio</title>
+<meta name="description" content="Zemra Lena is a Myrtle Beach-based marketer working across content, events, digital campaigns, brand and analytics.">
+<meta property="og:title" content="Zemra Lena | Marketing Portfolio">
+<meta property="og:description" content="Selected work across L'Oréal, TEDxPSU, Penn State Athletics, PIPELINE and independent client work.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Zemra Lena">
 <meta property="og:url" content="https://zemralena.github.io/">
-<meta property="og:image" content="https://zemralena.github.io/assets/og-image.png?v=1789087111">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zemralena.github.io/assets/og-image.png?v=1789087111">
+<meta property="og:image" content="https://zemralena.github.io/assets/og-image.png">
 <link rel="canonical" href="https://zemralena.github.io/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=1788901025">
+<style>
+:root{
+  --black:#080808;
+  --white:#ffffff;
+  --gray:#696969;
+  --light:#f5f5f5;
+  --line:#d8d8d8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--black);
+  font-family:Arial,Helvetica,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img,video{display:block;width:100%}
+button{font:inherit;color:inherit}
+.progress{
+  position:fixed;left:0;top:0;height:2px;width:0;
+  background:#000;z-index:1000;pointer-events:none;
+}
+nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px clamp(20px,4vw,64px);
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.name{
+  text-decoration:none;font-size:12px;font-weight:700;
+  letter-spacing:.18em;
+}
+.navlinks{display:flex;gap:28px}
+.navlinks a{
+  text-decoration:none;font-size:12px;position:relative;
+}
+.navlinks a:after{
+  content:"";position:absolute;left:0;right:100%;bottom:-5px;
+  height:1px;background:#000;transition:right .3s ease;
+}
+.navlinks a:hover:after{right:0}
+main,footer{max-width:1560px;margin:auto}
+
+/* HERO */
+.hero{
+  min-height:80vh;
+  padding:clamp(72px,9vw,140px) clamp(20px,6vw,92px) 72px;
+}
+.kicker,.sectionhead>span,.projectcopy>span,.small-label{
+  font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+}
+.titlewrap{position:relative;margin-top:22px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+h1{
+  margin:0;
+  font-size:clamp(74px,11vw,176px);
+  line-height:.84;letter-spacing:-.06em;
+}
+.photo{
+  position:absolute;right:3%;top:-34px;width:clamp(110px,11vw,170px);
+  margin:0;transform:rotate(2deg);
+}
+.photo img{
+  aspect-ratio:4/5;object-fit:cover;filter:grayscale(1);
+}
+.intro{
+  margin-top:72px;display:flex;align-items:end;justify-content:space-between;gap:42px;
+}
+.intro p{
+  margin:0;max-width:660px;font-size:clamp(17px,1.45vw,22px);
+  line-height:1.5;
+}
+.contact{display:flex;gap:22px}
+.contact a{font-size:12px;text-underline-offset:5px}
+
+/* RESULTS */
+.results{
+  margin:0 clamp(20px,6vw,92px);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid #000;border-bottom:1px solid #000;
+}
+.results div{padding:26px 22px;border-right:1px solid var(--line)}
+.results div:first-child{padding-left:0}
+.results div:last-child{border-right:0}
+.results strong{
+  display:block;font:400 clamp(30px,3.5vw,56px)/1 Georgia,"Times New Roman",serif;
+}
+.results span{font-size:11px;color:var(--gray)}
+
+/* SECTIONS */
+.section{padding:clamp(90px,10vw,160px) clamp(20px,6vw,92px)}
+.sectionhead{
+  display:flex;justify-content:space-between;align-items:end;gap:30px;
+  padding-bottom:18px;margin-bottom:60px;border-bottom:1px solid #000;
+}
+.sectionhead h2{
+  margin:0;font-size:clamp(44px,6vw,88px);
+  line-height:.92;letter-spacing:-.04em;
+}
+
+/* PROJECTS */
+.project{
+  display:block;text-decoration:none;border:1px solid #000;background:#fff;
+  overflow:hidden;
+}
+.projectwide{
+  display:grid;grid-template-columns:1.15fr .85fr;margin-bottom:24px;
+}
+.projectgrid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:24px;
+}
+.projectmedia{
+  position:relative;overflow:hidden;min-height:390px;background:var(--light);
+}
+.projectgrid .projectmedia{min-height:0;aspect-ratio:4/3}
+.projectmedia img,.projectmedia video{
+  height:100%;object-fit:cover;
+  transition:transform .6s cubic-bezier(.2,.8,.2,1),filter .6s ease;
+}
+.project:hover .projectmedia img,.project:hover .projectmedia video{
+  transform:scale(1.025);
+}
+.vichy{
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:44px;background:#fff;border-right:1px solid #000;
+}
+.brand{font-size:11px;letter-spacing:.15em;font-weight:700}
+.campaign{
+  font:400 clamp(46px,5.8vw,90px)/.94 Georgia,"Times New Roman",serif;
+  letter-spacing:-.04em;
+}
+.index{
+  position:absolute;right:16px;top:16px;
+  width:38px;height:38px;border-radius:50%;border:1px solid #000;background:#fff;
+  display:grid;place-items:center;font-size:10px;font-weight:700;
+}
+.projectcopy{
+  padding:clamp(28px,4vw,58px);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.projectcopy h3{
+  margin:12px 0 16px;
+  font-size:clamp(34px,4vw,60px);line-height:1;
+}
+.projectcopy p{
+  margin:0 0 22px;font-size:14px;line-height:1.6;color:#333;
+}
+.proof{
+  padding-top:16px;border-top:1px solid var(--line);
+  font-size:11px;font-weight:700;
+}
+.projectcopy b{margin-top:30px;font-size:11px}
+.pipeline{padding:44px;background:#fff}
+.pipeline img{object-fit:contain}
+
+/* EXPERIENCE */
+.roles{border-top:1px solid #000}
+.role{
+  border-bottom:1px solid var(--line);
+}
+.role-toggle{
+  width:100%;border:0;background:transparent;padding:25px 0;
+  display:grid;grid-template-columns:110px 1.15fr 1fr 30px;
+  gap:28px;align-items:center;text-align:left;cursor:pointer;
+}
+.role-toggle:hover .role-arrow{transform:translate(2px,-2px)}
+.role-toggle h3{
+  margin:0 0 4px;font-size:24px;
+}
+.role-toggle p{
+  margin:0;font-size:12px;color:#444;line-height:1.45;
+}
+.year{font-size:10px;color:var(--gray)}
+.role-arrow{
+  text-align:right;font-size:18px;transition:transform .25s ease;
+}
+.role-toggle[aria-expanded="true"] .role-arrow{
+  transform:rotate(45deg);
+}
+.role-body{
+  display:grid;
+  grid-template-rows:0fr;
+  transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1);
+}
+.role-body-inner{overflow:hidden}
+.role.open .role-body{grid-template-rows:1fr}
+.role-detail{
+  margin-left:138px;
+  padding:0 0 36px;
+  display:grid;grid-template-columns:1fr 1fr;gap:50px;
+  max-width:1050px;
+}
+.role-detail ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.role-detail li{
+  padding:10px 0;border-bottom:1px solid var(--line);
+  font-size:12px;line-height:1.5;color:#3e3e3e;
+}
+.role-outcomes{
+  display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;
+}
+.role-outcomes span{
+  border:1px solid #000;border-radius:999px;padding:7px 10px;
+  font-size:10px;font-weight:700;
+}
+
+/* MORE WORK */
+.morework{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid #000;border-left:1px solid #000;
+}
+.morecard{
+  padding:28px;border-right:1px solid #000;border-bottom:1px solid #000;
+}
+.morecard h3{margin:10px 0 12px;font-size:28px}
+.morecard p{margin:0;font-size:12px;line-height:1.5;color:#444}
+.morecard a{display:inline-block;margin-top:22px;font-size:11px;font-weight:700}
+
+/* FOOTER */
+footer{
+  padding:100px clamp(20px,6vw,92px) 44px;border-top:1px solid #000;
+}
+footer p{
+  font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-weight:700;
+}
+footer h2{
+  margin:10px 0 30px;font-size:clamp(50px,7vw,110px);
+  line-height:.9;letter-spacing:-.05em;
+}
+.email{
+  display:inline-block;font:400 clamp(26px,3.5vw,52px) Georgia,"Times New Roman",serif;
+  text-underline-offset:8px;
+}
+.footlinks{
+  margin-top:80px;padding-top:18px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;font-size:11px;
+}
+
+/* MOTION */
+.reveal{
+  opacity:0;transform:translateY(22px);
+  transition:opacity .72s ease,transform .72s cubic-bezier(.2,.8,.2,1);
+}
+.reveal.in{opacity:1;transform:none}
+.word-reveal{
+  overflow:hidden;
+}
+.word-reveal span{
+  display:inline-block;transform:translateY(105%);
+  animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards;
+}
+@keyframes rise{to{transform:translateY(0)}}
+.floatline{
+  position:absolute;left:0;right:0;bottom:0;height:1px;background:#000;
+  transform-origin:left;transform:scaleX(0);
+  transition:transform .8s cubic-bezier(.2,.8,.2,1);
+}
+.sectionhead.in .floatline{transform:scaleX(1)}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .projectmedia img,.projectmedia video,.role-body,.role-arrow{transition:none}
+  .word-reveal span{transform:none;animation:none}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .photo{position:relative;right:auto;top:auto;margin:28px 0 0 auto;width:125px}
+  .intro{display:block}.contact{margin-top:24px}
+  .results{grid-template-columns:repeat(2,1fr)}
+  .results div{border-right:0;border-bottom:1px solid var(--line)}
+  .results div:nth-last-child(-n+2){border-bottom:0}
+  .projectwide{display:block}.projectgrid{grid-template-columns:1fr}
+  .vichy{min-height:470px;border-right:0;border-bottom:1px solid #000}
+  .role-toggle{grid-template-columns:80px 1fr 30px}
+  .role-toggle>p{grid-column:2}
+  .role-arrow{grid-column:3;grid-row:1/3}
+  .role-detail{margin-left:108px;grid-template-columns:1fr;gap:0}
+  .morework{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  nav{padding:15px 18px}
+  .navlinks a:nth-child(2){display:none}
+  .hero,.section,footer{padding-left:18px;padding-right:18px}
+  h1{font-size:64px}
+  .results{margin-left:18px;margin-right:18px}
+  .results div{padding:18px 8px}
+  .sectionhead{display:block}.sectionhead h2{margin-top:12px}
+  .vichy{padding:28px}.campaign{font-size:44px}.pipeline{padding:24px}
+  .role-toggle{grid-template-columns:1fr 24px;gap:7px}
+  .year,.role-toggle>div,.role-toggle>p{grid-column:1}
+  .role-arrow{grid-column:2;grid-row:1/4}
+  .role-detail{margin-left:0;padding-top:0}
+  .footlinks{flex-direction:column;gap:12px}
+}
+</style>
 </head>
 <body>
-<nav><div class="w in"><a class="sig" href="index.html" style="text-decoration:none">ZEMRA LENA</a>
-<button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
-  <span></span><span></span><span></span>
-</button>
-<ul id="menu">
-  <li><a href="index.html#work">Work</a></li>
-  <li><a href="index.html#sel">Selected</a></li>
-  <li><a href="index.html#skills">Skills</a></li>
-  <li><a href="index.html#c">Contact</a></li>
-</ul></div>
-<span class="scrollbar" id="scrollbar"></span></nav>
-<header class="hero"><div class="w">
- <p class="lab rv">Marketing · Content · Analytics</p>
- <div class="nameRow rv">
-   <h1 data-par="-0.06" class="split"><span style="--l:0">Z</span><span style="--l:1">e</span><span style="--l:2">m</span><span style="--l:3">r</span><span style="--l:4">a</span><span class="sp"> </span><span style="--l:6">L</span><span style="--l:7">e</span><span style="--l:8">n</span><span style="--l:9">a</span></h1>
-   <div class="heroPic" data-par="0.10"><img src="assets/headshot.jpg" alt="Zemra Lena"></div>
- </div>
- <div class="hgrid">
-  <div class="blurb rv">
-   <p>I&#x27;m a proud <b>Penn State marketing graduate</b>. I&#x27;ve worked in social, content, email, event planning and analytics, and I shoot and write most of it myself.</p><p>What I like most is <b>getting people to show up</b>, and keeping them coming back. I&#x27;ve done that for a conference, a research program and a college athletics account.</p><p>I&#x27;m looking for a marketing job where I <b>own real projects</b> instead of just helping out. I moved to Myrtle Beach this summer and I want to stay.</p>
-   <div class="edu"><img src="assets/logos/psu-athletics.svg" alt="Penn State">
-    <div><b>B.S. Marketing</b><span>Penn State Smeal College of Business · May 2026</span></div></div>
-  </div>
-  <div class="cts rv">
-   <a href="mailto:zemralena3@gmail.com"><span class="k">Email</span><span class="v">zemralena3@gmail.com</span></a>
-   <a href="tel:8545880997"><span class="k">Phone</span><span class="v">854 588 0997</span></a>
-   <a href="https://linkedin.com/in/zemralena" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">in/zemralena</span></a>
-   <a href="#c"><span class="k">Based in</span><span class="v">Myrtle Beach, SC</span></a>
-  </div>
- </div>
-</div></header>
+<div class="progress" id="progress"></div>
 
-<section id="work"><div class="w">
- <div class="head rv"><h2>Work</h2><span class="lab">5 roles &middot; 2023 to now</span></div>
- <div class="tabs rv" role="tablist">
-  <button role="tab" aria-selected="true" data-p="p1">Experience</button>
-  <button role="tab" aria-selected="false" data-p="p3">Published writing</button>
- </div>
- <div class="panel" id="p1"><div class="exp stag"><a href="work/athletics.html"><span class="lg"><img src="assets/logos/psu-athletics.svg" alt="" loading="lazy"></span><span class="t">Penn State Athletics</span><span class="yr">2023 – 2024</span><span class="r">Digital Media Specialist · game day content across four sports</span></a><a href="work/pipeline.html"><span class="lg"><img src="assets/logos/pipeline.png" alt="" loading="lazy"></span><span class="t">PIPELINE</span><span class="yr">2024 – 2026</span><span class="r">Marketing &amp; Communications · sole marketer, $15M Navy-funded program</span></a><a href="work/tedx.html"><span class="lg"><img src="assets/logos/tedx.png" alt="" loading="lazy"></span><span class="t">TEDxPSU</span><span class="yr">2024 – 2026</span><span class="r">Director of Marketing · doubled attendance in a record revenue year</span></a><a href="work/loreal.html"><span class="lg"><img src="assets/logos/loreal.svg" alt="" loading="lazy"></span><span class="t">L’Oréal</span><span class="yr">2026</span><span class="r">Content and Digital Creative Intern · Luxe Division, VICHY Dercos</span></a><a href="work/evolve.html"><span class="lg"></span><span class="t">Evolve Studio</span><span class="yr">2026 – now</span><span class="r">Freelance · brand identity, websites and growth plans</span></a></div></div>
- <div class="panel" id="p3" hidden><ul class="arts"><li><a href="https://pipeline.psu.edu/news/student-spotlight-ben-bizzak" target="_blank" rel="noopener"><span class="t">Student Spotlight: Ben Bizzak</span><span class="d">Jul 21, 2025</span></a></li><li><a href="https://pipeline.psu.edu/news/student-spotlight-corinne-scherer" target="_blank" rel="noopener"><span class="t">Student Spotlight: Corinne Scherer</span><span class="d">Jul 14, 2025</span></a></li><li><a href="https://pipeline.psu.edu/news/summer-trip-to-washington-d-c-2" target="_blank" rel="noopener"><span class="t">Summer Trip to Washington, D.C.</span><span class="d">Jul 10, 2025</span></a></li><li><a href="https://pipeline.psu.edu/news/student-spotlight-adelaide-orsetti" target="_blank" rel="noopener"><span class="t">Student Spotlight: Adelaide Orsetti</span><span class="d">Jul 7, 2025</span></a></li><li><a href="https://pipeline.psu.edu/news/student-spotlight-jocelyn-espinoza" target="_blank" rel="noopener"><span class="t">Student Spotlight: Jocelyn Espinoza</span><span class="d">Jun 30, 2025</span></a></li><li><a href="https://pipeline.psu.edu/news/student-spotlight-noah-robertson" target="_blank" rel="noopener"><span class="t">Student Spotlight: Noah Robertson</span><span class="d">Jun 23, 2025</span></a></li><li><a href="https://pipeline.psu.edu/news/student-spotlight-george-neimeyer" target="_blank" rel="noopener"><span class="t">Student Spotlight: George Neimeyer</span><span class="d">Jun 16, 2025</span></a></li><li><a href="https://pipeline.psu.edu/news/student-spotlight-alex-haefner" target="_blank" rel="noopener"><span class="t">Student Spotlight: Alexander Haefner</span><span class="d">May 5, 2025</span></a></li><li><a href="https://pipeline.psu.edu/news/student-spotlight-casey-hess" target="_blank" rel="noopener"><span class="t">Student Spotlight: Casey Hess</span><span class="d">Apr 14, 2025</span></a></li><li><a href="https://pipeline.psu.edu/news/student-spotlight-ruth-willet" target="_blank" rel="noopener"><span class="t">Student Spotlight: Ruth Willet</span><span class="d">Mar 31, 2025</span></a></li><li><a href="https://pipeline.psu.edu/news/student-spotlight-somdatta-basu" target="_blank" rel="noopener"><span class="t">Student Spotlight: Somdatta Basu</span><span class="d">Mar 3, 2025</span></a></li><li><a href="https://pipeline.psu.edu/news/student-spotlight-evan-marcinkevage" target="_blank" rel="noopener"><span class="t">Student Spotlight: Evan Marcinkevage</span><span class="d">Feb 24, 2025</span></a></li></ul></div>
-</div></section>
+<nav>
+  <a class="name" href="#top">ZEMRA LENA</a>
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-<section id="sel" class="hs">
- <div class="hs__pin">
-  <div class="w">
-   <div class="head rv"><h2>Selected work</h2><span class="lab">Game day, design and events</span></div>
+<main id="top">
+<header class="hero">
+  <p class="kicker reveal">Marketing · Content · Events</p>
+  <div class="titlewrap">
+    <h1 class="reveal">Zemra Lena</h1>
+    <figure class="photo reveal" data-drift=".045">
+      <img src="assets/headshot.jpg" alt="Zemra Lena">
+    </figure>
   </div>
-  <div class="hs__vp"><div class="hs__track">
-   <div class="hs__lab"><span>Reels</span><b>01</b></div>      <a class="pc pc--reel" href="assets/video/volleyball-gym.jpg?v=1788538910" data-t="Volleyball, match night"><span class="tag tag--up"><b>Video creation</b><svg class="tag__a" viewBox="0 0 46 40" fill="none" aria-hidden="true"><path d="M5 4C5 20 11 30 34 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M26 28.5 35.5 34.2 27 39" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <div class="ig"><div class="ig__dev"><span class="ig__island"></span>
-          <div class="ig__scr">
-            <video src="assets/video/volleyball-gym.mp4" poster="assets/video/volleyball-gym.jpg?v=1788538910" muted loop playsinline preload="none"></video>
-            <div class="ig__ui">
-              <span class="ig__top">Reels</span>
-              <div class="ig__rail">
-<span class="ig__ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6c0 5-8.8 9.9-8.8 9.9s-8.8-4.9-8.8-9.9a4.6 4.6 0 0 1 8.8-1.8 4.6 4.6 0 0 1 8.8 1.8z"/></svg></span>
-<span class="ig__ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-3.9-.8L3 20.5l1.4-4.1A8.3 8.3 0 0 1 3 11.5a8.4 8.4 0 0 1 9-8.4 8.4 8.4 0 0 1 9 8.4z"/></svg></span>
-<span class="ig__ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></span>
-<span class="ig__ic"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></span>
-</div>
-              <div class="ig__meta">
-                <span class="ig__acct"><img class="ig__av" src="assets/logos/psu-athletics.svg" alt="">Penn State Athletics</span>
-                <span class="ig__cap">Volleyball, match night</span>
-                <span class="ig__aud">&#9834; Original audio</span>
-              </div>
-              <div class="ig__plays"><svg viewBox="0 0 24 24" fill="#fff" width="11" height="11"><path d="M6 3.5v17l14-8.5z"/></svg>26.4K</div>
-            </div>
-          </div></div></div>
-        <div class="ti">Volleyball, match night</div>
-      </a>      <a class="pc pc--reel" href="assets/video/soccer-golden.jpg?v=1788538909" data-t="Soccer, golden hour"><span class="tag tag--up"><b>Content creation</b><svg class="tag__a" viewBox="0 0 46 40" fill="none" aria-hidden="true"><path d="M5 4C5 20 11 30 34 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M26 28.5 35.5 34.2 27 39" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <div class="ig"><div class="ig__dev"><span class="ig__island"></span>
-          <div class="ig__scr">
-            <video src="assets/video/soccer-golden.mp4" poster="assets/video/soccer-golden.jpg?v=1788538909" muted loop playsinline preload="none"></video>
-            <div class="ig__ui">
-              <span class="ig__top">Reels</span>
-              <div class="ig__rail">
-<span class="ig__ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6c0 5-8.8 9.9-8.8 9.9s-8.8-4.9-8.8-9.9a4.6 4.6 0 0 1 8.8-1.8 4.6 4.6 0 0 1 8.8 1.8z"/></svg></span>
-<span class="ig__ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-3.9-.8L3 20.5l1.4-4.1A8.3 8.3 0 0 1 3 11.5a8.4 8.4 0 0 1 9-8.4 8.4 8.4 0 0 1 9 8.4z"/></svg></span>
-<span class="ig__ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></span>
-<span class="ig__ic"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></span>
-</div>
-              <div class="ig__meta">
-                <span class="ig__acct"><img class="ig__av" src="assets/logos/psu-athletics.svg" alt="">Penn State Athletics</span>
-                <span class="ig__cap">Soccer, golden hour</span>
-                <span class="ig__aud">&#9834; Original audio</span>
-              </div>
-              <div class="ig__plays"><svg viewBox="0 0 24 24" fill="#fff" width="11" height="11"><path d="M6 3.5v17l14-8.5z"/></svg>18.8K</div>
-            </div>
-          </div></div></div>
-        <div class="ti">Soccer, golden hour</div>
-      </a>      <a class="pc pc--reel" href="assets/video/papertowns-reel.jpg?v=1788538916" data-t="TEDxPSU Paper Towns"><span class="tag tag--up"><b>Social media</b><svg class="tag__a" viewBox="0 0 46 40" fill="none" aria-hidden="true"><path d="M5 4C5 20 11 30 34 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M26 28.5 35.5 34.2 27 39" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <div class="ig"><div class="ig__dev"><span class="ig__island"></span>
-          <div class="ig__scr">
-            <video src="assets/video/papertowns-reel.mp4" poster="assets/video/papertowns-reel.jpg?v=1788538916" muted loop playsinline preload="none"></video>
-            <div class="ig__ui">
-              <span class="ig__top">Reels</span>
-              <div class="ig__rail">
-<span class="ig__ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6c0 5-8.8 9.9-8.8 9.9s-8.8-4.9-8.8-9.9a4.6 4.6 0 0 1 8.8-1.8 4.6 4.6 0 0 1 8.8 1.8z"/></svg></span>
-<span class="ig__ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-3.9-.8L3 20.5l1.4-4.1A8.3 8.3 0 0 1 3 11.5a8.4 8.4 0 0 1 9-8.4 8.4 8.4 0 0 1 9 8.4z"/></svg></span>
-<span class="ig__ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></span>
-<span class="ig__ic"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></span>
-</div>
-              <div class="ig__meta">
-                <span class="ig__acct"><img class="ig__av" src="assets/logos/tedx.png" alt="">TEDxPSU</span>
-                <span class="ig__cap">TEDxPSU Paper Towns</span>
-                <span class="ig__aud">&#9834; Original audio</span>
-              </div>
-              
-            </div>
-          </div></div></div>
-        <div class="ti">TEDxPSU Paper Towns</div>
-      </a>
-   <div class="hs__lab"><span>Graphics</span><b>02</b></div>      <a class="pc pc--card" href="assets/work/athletics/potw-schwartz.jpg?v=1788532734" data-t="Player of the Week"><span class="tag tag--dn"><b>Graphic design</b><svg class="tag__a" viewBox="0 0 46 40" fill="none" aria-hidden="true"><path d="M5 4C5 20 11 30 34 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M26 28.5 35.5 34.2 27 39" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="fr" style="--ar:799/448"><img src="assets/work/athletics/potw-schwartz.jpg?v=1788532734" alt="Player of the Week" loading="lazy" decoding="async"><span class="cap">Player of the Week</span></div><div class="ti">Player of the Week</div></a>      <a class="pc pc--card" href="assets/work/athletics/potw-farabaugh.jpg?v=1788532734" data-t="Offensive Player of the Week"><div class="fr" style="--ar:799/451"><img src="assets/work/athletics/potw-farabaugh.jpg?v=1788532734" alt="Offensive Player of the Week" loading="lazy" decoding="async"><span class="cap">Offensive Player of the Week</span></div><div class="ti">Offensive Player of the Week</div></a>      <a class="pc pc--card" href="assets/work/athletics/soccer-all-amcc.png?v=1788532733" data-t="Women’s soccer All-Conference"><div class="fr" style="--ar:799/440"><img src="assets/work/athletics/soccer-all-amcc.png?v=1788532733" alt="Women’s soccer All-Conference" loading="lazy" decoding="async"><span class="cap">Women’s soccer All-Conference</span></div><div class="ti">Women’s soccer All-Conference</div></a>
-   <div class="hs__lab"><span>Design and events</span><b>03</b></div>      <a class="pc pc--card" href="assets/work/pipeline/crest.png?v=1788532734" data-t="PIPELINE crest"><span class="tag tag--up"><b>Logo creation</b><svg class="tag__a" viewBox="0 0 46 40" fill="none" aria-hidden="true"><path d="M5 4C5 20 11 30 34 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M26 28.5 35.5 34.2 27 39" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="fr" style="--ar:1024/1024"><img src="assets/work/pipeline/crest.png?v=1788532734" alt="PIPELINE crest" loading="lazy" decoding="async"><span class="cap">PIPELINE crest</span></div><div class="ti">PIPELINE crest</div></a>      <a class="pc pc--card" href="assets/work/pipeline/banner.png?v=1788898746" data-t="Roll-up event banner"><span class="tag tag--dn"><b>Copywriting</b><svg class="tag__a" viewBox="0 0 46 40" fill="none" aria-hidden="true"><path d="M5 4C5 20 11 30 34 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M26 28.5 35.5 34.2 27 39" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="fr" style="--ar:499/1239"><img src="assets/work/pipeline/banner.png?v=1788898746" alt="Roll-up event banner" loading="lazy" decoding="async"><span class="cap">Roll-up event banner</span></div><div class="ti">Roll-up event banner</div></a>      <a class="pc pc--feature" data-rate="1.8" href="assets/video/psu-shield.jpg?v=1788798962" data-t="Program motion open">
-        <div class="fr" style="--ar:16/9"><video src="assets/video/psu-shield.mp4" poster="assets/video/psu-shield.jpg?v=1788798962"
-          muted loop playsinline preload="none"></video><span class="playmark" aria-hidden="true"></span></div>
-        <div class="ti">Program motion open</div></a>      <a class="pc pc--card" href="assets/work/tedx-papertowns/pt-mark.png?v=1788795097" data-t="Paper Towns identity mark"><span class="tag tag--up"><b>Branding</b><svg class="tag__a" viewBox="0 0 46 40" fill="none" aria-hidden="true"><path d="M5 4C5 20 11 30 34 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M26 28.5 35.5 34.2 27 39" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="fr" style="--ar:1400/1400"><img src="assets/work/tedx-papertowns/pt-mark.png?v=1788795097" alt="Paper Towns identity mark" loading="lazy" decoding="async"><span class="cap">Paper Towns identity mark</span></div><div class="ti">Paper Towns identity mark</div></a>      <a class="pc pc--card" href="assets/work/tedx-zeitgeist/brown.png?v=1788532734" data-t="Zeitgeist speaker card"><div class="fr" style="--ar:820/820"><img src="assets/work/tedx-zeitgeist/brown.png?v=1788532734" alt="Zeitgeist speaker card" loading="lazy" decoding="async"><span class="cap">Zeitgeist speaker card</span></div><div class="ti">Zeitgeist speaker card</div></a>      <a class="pc pc--card" href="assets/work/tedx-zeitgeist/email.jpg?v=1788532734" data-t="Conference email"><span class="tag tag--dn"><b>Email marketing</b><svg class="tag__a" viewBox="0 0 46 40" fill="none" aria-hidden="true"><path d="M5 4C5 20 11 30 34 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M26 28.5 35.5 34.2 27 39" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="fr" style="--ar:408/1400"><img src="assets/work/tedx-zeitgeist/email.jpg?v=1788532734" alt="Conference email" loading="lazy" decoding="async"><span class="cap">Conference email</span></div><div class="ti">Conference email</div></a>
-   <div class="hs__lab"><span>Photography</span><b>04</b></div>      <a class="pc pc--photo" href="assets/work/photo/conference-room.jpg?v=1788532734" data-t="PIPELINE research presentation"><div class="fr" style="--ar:933/1400"><img src="assets/work/photo/conference-room.jpg?v=1788532734" alt="PIPELINE research presentation" loading="lazy" decoding="async"><span class="cap">PIPELINE research presentation</span></div><div class="ti">PIPELINE research presentation</div></a>      <a class="pc pc--photo" href="assets/work/photo/poster-session.jpg?v=1788532734" data-t="Poster session"><div class="fr" style="--ar:1400/933"><img src="assets/work/photo/poster-session.jpg?v=1788532734" alt="Poster session" loading="lazy" decoding="async"><span class="cap">Poster session</span></div><div class="ti">Poster session</div></a>
-   <div class="hs__end">
-    <a class="hs__go" href="#skills">See the skills behind it &darr;</a></div>
-  </div></div>
-  <div class="w hs__foot">
-   <div class="hs__bar"><i></i></div>
-   <p class="hs__hint">Keep scrolling<i></i></p>
+  <div class="intro reveal">
+    <p>Myrtle Beach-based marketer working across campaigns, content, events and digital.</p>
+    <div class="contact">
+      <a href="mailto:zemralena3@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/zemralena" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
- </div>
+</header>
+
+<section class="results reveal" aria-label="Selected results">
+  <div><strong data-count="300" data-suffix="%">300%</strong><span>social engagement</span></div>
+  <div><strong>2×</strong><span>event attendance</span></div>
+  <div><strong data-count="243" data-suffix="%">243%</strong><span>LinkedIn engagement</span></div>
+  <div><strong data-count="87" data-suffix="%">87%</strong><span>website traffic</span></div>
 </section>
 
-<section id="skills"><div class="w">
- <div class="head rv"><h2>Skills</h2><span class="lab">What I know</span></div>
- <div class="sk rv stag"><div class="row star"><h3>AI in marketing</h3><p>Claude and ChatGPT daily, prompt engineering, custom AI research and content workflows, automated reporting.</p></div><div class="row"><h3>Marketing</h3><p>Multi-channel campaigns, content strategy, social media, email marketing, media planning, out-of-home and print, sponsorship, event marketing.</p></div><div class="row"><h3>Content and creative</h3><p>DSLR photo and video, live event coverage, copywriting, brand identity, photo library management.</p></div><div class="row"><h3>Analytics</h3><p>Google Analytics 4, LinkedIn Analytics, SQL, KPI reporting, SEO, A/B testing.</p></div></div>
- <div class="appwrap rv">
-  <p class="lab">Applications</p>
-  <div class="appgrid stag"><span class="app"><i class="app__i"><img src="assets/logos/apps/photoshop.svg" alt="" loading="lazy"></i><em>Photoshop</em></span><span class="app"><i class="app__i"><img src="assets/logos/apps/lightroom.svg" alt="" loading="lazy"></i><em>Lightroom</em></span><span class="app"><i class="app__i"><img src="assets/logos/apps/illustrator.svg" alt="" loading="lazy"></i><em>Illustrator</em></span><span class="app"><i class="app__i"><img src="assets/logos/apps/canva.svg" alt="" loading="lazy"></i><em>Canva</em></span><span class="app"><i class="app__i"><img src="assets/logos/apps/craftcms.svg" alt="" loading="lazy"></i><em>Craft CMS</em></span><span class="app"><i class="app__i"><img src="assets/logos/apps/mailchimp.svg" alt="" loading="lazy"></i><em>Mailchimp</em></span><span class="app"><i class="app__i"><img src="assets/logos/apps/ga4.svg" alt="" loading="lazy"></i><em>Google Analytics 4</em></span><span class="app"><i class="app__i"><img src="assets/logos/apps/linkedin.svg" alt="" loading="lazy"></i><em>LinkedIn Analytics</em></span><span class="app"><i class="app__i"><img src="assets/logos/apps/claude.svg" alt="" loading="lazy"></i><em>Claude</em></span><span class="app"><i class="app__i"><img src="assets/logos/apps/chatgpt.svg" alt="" loading="lazy"></i><em>ChatGPT</em></span><span class="app"><i class="app__i"><img src="assets/logos/apps/office.svg" alt="" loading="lazy"></i><em>Microsoft Office</em></span><span class="app"><i class="app__i"><img src="assets/logos/apps/workspace.svg" alt="" loading="lazy"></i><em>Google Workspace</em></span><span class="app app--soon"><i class="app__i">Sp</i><em>Sprout Social<small>learning</small></em></span><span class="app app--soon"><i class="app__i">Mw</i><em>Meltwater<small>learning</small></em></span></div>
-  <div class="certline"><a href="https://linkedin.com/in/zemralena" target="_blank" rel="noopener">Google Ads Certified</a><a href="https://linkedin.com/in/zemralena" target="_blank" rel="noopener">Google Analytics Certified</a><a href="https://linkedin.com/in/zemralena" target="_blank" rel="noopener">English, Albanian, Spanish</a></div>
- </div>
-</div></section>
-<footer class="end" id="c"><div class="w in">
- <div class="avatar" data-par="0.07"><img src="assets/headshot.jpg" alt="Zemra Lena"></div>
- <h2>Let’s work together</h2>
- <p class="sub">I&#x27;m in Myrtle Beach and looking for a marketing role. Email me, I answer the same day.</p>
- <a class="mail" href="mailto:zemralena3@gmail.com?subject=Let%27s%20work%20together">zemralena3@gmail.com</a>
- <div class="alt">
-   <a href="tel:8545880997">854 588 0997</a>
-   <a href="https://linkedin.com/in/zemralena" target="_blank" rel="noopener">LinkedIn</a>
-   <a href="mailto:zemralena3@gmail.com?subject=Resume%20request">Ask for my resume</a>
- </div>
- <p class="fine">Zemra Lena &middot; Myrtle Beach, SC</p>
-</div></footer>
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <button class="lb__x" id="lbx" aria-label="Close">&times;</button>
-  <button class="lb__nav lb__prev" id="lbp" aria-label="Previous">&#8249;</button>
-  <img id="lbi" alt="">
-  <button class="lb__nav lb__next" id="lbn" aria-label="Next">&#8250;</button>
-  <div class="lb__cap" id="lbc"></div>
-</div>
-<script src="assets/js/site.js?v=1788900460"></script>
-</body></html>
+<section class="section" id="work">
+  <div class="sectionhead reveal">
+    <span>Selected work</span>
+    <h2>Four projects.</h2>
+  </div>
+
+  <a class="project projectwide reveal" href="work/loreal.html">
+    <div class="projectmedia vichy">
+      <span class="brand">L’ORÉAL · VICHY DERCOS</span>
+      <span class="campaign">Silence your dandruff.<br>Reclaim your moment.</span>
+      <span class="index">01</span>
+    </div>
+    <div class="projectcopy">
+      <span>Beauty · Campaign</span>
+      <h3>Vichy Dercos</h3>
+      <p>U.S. campaign development from consumer research through creative direction and media planning.</p>
+      <div class="proof">64-slide campaign deck · 39-page media plan</div>
+      <b>View project ↗</b>
+    </div>
+  </a>
+
+  <div class="projectgrid">
+    <a class="project reveal" href="work/tedx.html">
+      <div class="projectmedia">
+        <video autoplay muted loop playsinline poster="assets/video/tedx-stage-applause.jpg">
+          <source src="assets/video/tedx-stage-applause.mp4" type="video/mp4">
+        </video>
+        <span class="index">02</span>
+      </div>
+      <div class="projectcopy">
+        <span>Events · Social</span>
+        <h3>TEDxPSU</h3>
+        <p>Integrated marketing for two conference cycles.</p>
+        <div class="proof">2× attendance · 300% engagement</div>
+        <b>View project ↗</b>
+      </div>
+    </a>
+
+    <a class="project reveal" href="work/athletics.html">
+      <div class="projectmedia">
+        <video autoplay muted loop playsinline poster="assets/video/volleyball-gym.jpg">
+          <source src="assets/video/volleyball-gym.mp4" type="video/mp4">
+        </video>
+        <span class="index">03</span>
+      </div>
+      <div class="projectcopy">
+        <span>Photo · Video · Social</span>
+        <h3>Penn State Athletics</h3>
+        <p>Live photo, video and graphic content across four sports.</p>
+        <div class="proof">20K+ average views · 16.4% growth</div>
+        <b>View project ↗</b>
+      </div>
+    </a>
+  </div>
+
+  <a class="project projectwide reveal" href="work/pipeline.html">
+    <div class="projectmedia pipeline">
+      <img src="assets/work/pipeline/banner.png" alt="PIPELINE event banner">
+      <span class="index">04</span>
+    </div>
+    <div class="projectcopy">
+      <span>Web · Email · Social · Events</span>
+      <h3>PIPELINE</h3>
+      <p>Multi-channel marketing for a $15M Navy-funded engineering program.</p>
+      <div class="proof">243% engagement · 87% website traffic</div>
+      <b>View project ↗</b>
+    </div>
+  </a>
+</section>
+
+<section class="section" id="experience">
+  <div class="sectionhead reveal">
+    <span>Experience</span>
+    <h2>What I’ve done.</h2>
+  </div>
+
+  <div class="roles">
+    <article class="role reveal">
+      <button class="role-toggle" type="button" aria-expanded="false">
+        <span class="year">2024–2026</span>
+        <div><h3>PIPELINE Program</h3><p>Marketing & Strategic Communications Intern</p></div>
+        <p>Web, social, email, print, events and reporting.</p>
+        <span class="role-arrow">+</span>
+      </button>
+      <div class="role-body">
+        <div class="role-body-inner">
+          <div class="role-detail">
+            <div>
+              <ul>
+                <li>Built the program’s first brand book and campaign calendar.</li>
+                <li>Launched and published 20+ monthly Mailchimp newsletters.</li>
+                <li>Created social, event, recruitment and sponsor-facing materials.</li>
+                <li>Produced student and project spotlights, presentations, banners and web content.</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Updated Craft CMS pages and improved SEO, UX and accessibility.</li>
+                <li>Used Google Analytics and platform data for performance reporting.</li>
+                <li>Supported recruiting, career fairs, Build Nights and the Ambassador Program.</li>
+                <li>Co-produced a program video with WPSU.</li>
+              </ul>
+              <div class="role-outcomes">
+                <span>243% engagement</span><span>210% followers</span><span>87% web traffic</span><span>50K+ monthly impressions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="role reveal">
+      <button class="role-toggle" type="button" aria-expanded="false">
+        <span class="year">2024–2026</span>
+        <div><h3>TEDxPSU</h3><p>Director of Marketing</p></div>
+        <p>Team leadership and integrated conference marketing.</p>
+        <span class="role-arrow">+</span>
+      </button>
+      <div class="role-body">
+        <div class="role-body-inner">
+          <div class="role-detail">
+            <div>
+              <ul>
+                <li>Led an eight-person marketing team across two conference cycles.</li>
+                <li>Owned social, email, paid promotion, print and campus outreach.</li>
+                <li>Built speaker, event and conference-theme content.</li>
+                <li>Produced interview and on-camera video content.</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Coordinated communications and logistics for 11 speakers.</li>
+                <li>Built sponsor materials and pitched the Smeal College of Business Dean.</li>
+                <li>Tracked weekly KPIs and tested creative and calls to action.</li>
+                <li>Helped shape the visual systems for Paper Towns and Zeitgeist.</li>
+              </ul>
+              <div class="role-outcomes">
+                <span>2× attendance</span><span>300% engagement</span><span>$15K sponsorship</span><span>8-person team</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="role reveal">
+      <button class="role-toggle" type="button" aria-expanded="false">
+        <span class="year">2026</span>
+        <div><h3>L’Oréal · Vichy Dercos</h3><p>Content & Digital Creative</p></div>
+        <p>Campaign strategy, creative and media planning.</p>
+        <span class="role-arrow">+</span>
+      </button>
+      <div class="role-body">
+        <div class="role-body-inner">
+          <div class="role-detail">
+            <div>
+              <ul>
+                <li>Led creative development for a 360° U.S. campaign.</li>
+                <li>Used segmentation, focus groups and competitive research to shape positioning.</li>
+                <li>Created billboard, print, street and experiential concepts.</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Built a 64-slide campaign deck and 39-page media plan.</li>
+                <li>Planned social, influencer, retail, OOH, PR, Amazon and digital activity.</li>
+                <li>Presented weekly to senior L’Oréal and agency leadership.</li>
+              </ul>
+              <div class="role-outcomes">
+                <span>64-slide deck</span><span>39-page media plan</span><span>4 campaign phases</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="role reveal">
+      <button class="role-toggle" type="button" aria-expanded="false">
+        <span class="year">2023–2024</span>
+        <div><h3>Penn State Athletics</h3><p>Digital Media Specialist</p></div>
+        <p>Photography, video, graphics and social.</p>
+        <span class="role-arrow">+</span>
+      </button>
+      <div class="role-body">
+        <div class="role-body-inner">
+          <div class="role-detail">
+            <div>
+              <ul>
+                <li>Produced 50+ photo, video and graphic pieces.</li>
+                <li>Covered four sports and published same-day social content.</li>
+                <li>Shot DSLR photography and edited with Lightroom, Photoshop and Canva.</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Built recurring graphic formats across sports.</li>
+                <li>Wrote captions and selected content for official channels.</li>
+                <li>Archived and labeled the visual library for staff use.</li>
+              </ul>
+              <div class="role-outcomes">
+                <span>20K+ average views</span><span>16.4% growth</span><span>50+ assets</span><span>4 sports</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="role reveal">
+      <button class="role-toggle" type="button" aria-expanded="false">
+        <span class="year">2026–now</span>
+        <div><h3>Evolve Studio</h3><p>Freelance Marketing Consultant</p></div>
+        <p>Brand, websites and local business marketing.</p>
+        <span class="role-arrow">+</span>
+      </button>
+      <div class="role-body">
+        <div class="role-body-inner">
+          <div class="role-detail">
+            <div>
+              <ul>
+                <li>Create competitive audits, strategy and growth plans.</li>
+                <li>Develop brand identity, messaging, social direction and websites.</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Manage client communication, timelines and final delivery.</li>
+                <li>Work directly with local owner-led businesses in the Myrtle Beach market.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="role reveal">
+      <button class="role-toggle" type="button" aria-expanded="false">
+        <span class="year">2024–2026</span>
+        <div><h3>Smeal Sports Business Club</h3><p>Digital Marketing Specialist</p></div>
+        <p>Newsletter, social and event content.</p>
+        <span class="role-arrow">+</span>
+      </button>
+      <div class="role-body">
+        <div class="role-body-inner">
+          <div class="role-detail">
+            <div>
+              <ul>
+                <li>Managed the club newsletter, LinkedIn and Instagram.</li>
+                <li>Covered events and created recurring student content.</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Published daily stories and weekly feed content.</li>
+                <li>Produced 30+ feed posts across the year.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="role reveal">
+      <button class="role-toggle" type="button" aria-expanded="false">
+        <span class="year">2024–2026</span>
+        <div><h3>Penn State AMA</h3><p>Project Manager</p></div>
+        <p>Client projects from scope through delivery.</p>
+        <span class="role-arrow">+</span>
+      </button>
+      <div class="role-body">
+        <div class="role-body-inner">
+          <div class="role-detail">
+            <div>
+              <ul>
+                <li>Managed client scope, timelines and deliverables.</li>
+                <li>Coordinated creative work across team members.</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>Led a TDAY Sports identity project approved without revisions.</li>
+                <li>Balanced client feedback with project deadlines and brand goals.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sectionhead reveal">
+    <span>More work</span>
+    <h2>Writing + client work.</h2>
+  </div>
+
+  <div class="morework reveal">
+    <div class="morecard">
+      <span class="small-label">Published writing</span>
+      <h3>PIPELINE Stories</h3>
+      <p>Student profiles, program updates and event coverage published through Penn State.</p>
+      <a href="work/writing.html">View writing ↗</a>
+    </div>
+    <div class="morecard">
+      <span class="small-label">Client website</span>
+      <h3>Pho Love</h3>
+      <p>Website concept, visual direction and digital experience for an independent restaurant.</p>
+      <a href="work/evolve.html">View project ↗</a>
+    </div>
+    <div class="morecard">
+      <span class="small-label">Education</span>
+      <h3>Penn State Smeal</h3>
+      <p>B.S. Marketing, Strategic Insights & Analytics. May 2026.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <p class="reveal">Myrtle Beach, SC</p>
+  <h2 class="reveal">Let’s work together.</h2>
+  <a class="email reveal" href="mailto:zemralena3@gmail.com">zemralena3@gmail.com</a>
+  <div class="footlinks">
+    <a href="https://linkedin.com/in/zemralena" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="tel:8545880997">854 588 0997</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const progress = document.getElementById('progress');
+
+  function onScroll(){
+    const max = document.documentElement.scrollHeight - innerHeight;
+    if(progress) progress.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
+
+    if(!reduce){
+      document.querySelectorAll('[data-drift]').forEach(el=>{
+        const r = el.getBoundingClientRect();
+        const speed = parseFloat(el.dataset.drift || 0);
+        const y = (r.top + r.height/2 - innerHeight/2) * speed;
+        el.style.translate = '0 ' + (-y).toFixed(1) + 'px';
+      });
+    }
+  }
+  addEventListener('scroll',()=>requestAnimationFrame(onScroll),{passive:true});
+  addEventListener('resize',onScroll);
+  onScroll();
+
+  const reveals=[...document.querySelectorAll('.reveal')];
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(el=>el.classList.add('in'));
+  } else {
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:.08,rootMargin:'0px 0px -5% 0px'});
+    reveals.forEach(el=>io.observe(el));
+    setTimeout(()=>reveals.forEach(el=>el.classList.add('in')),1800);
+  }
+
+  document.querySelectorAll('.role-toggle').forEach(button=>{
+    button.addEventListener('click',()=>{
+      const role=button.closest('.role');
+      const open=role.classList.toggle('open');
+      button.setAttribute('aria-expanded',open?'true':'false');
+      button.querySelector('.role-arrow').textContent=open?'×':'+';
+    });
+  });
+
+  if(!reduce && matchMedia('(hover:hover) and (pointer:fine)').matches){
+    document.querySelectorAll('.projectmedia').forEach(box=>{
+      const media=box.querySelector('img,video');
+      if(!media)return;
+      box.addEventListener('mousemove',e=>{
+        const r=box.getBoundingClientRect();
+        const x=((e.clientX-r.left)/r.width-.5)*7;
+        const y=((e.clientY-r.top)/r.height-.5)*7;
+        media.style.transform='scale(1.025) translate('+x.toFixed(1)+'px,'+y.toFixed(1)+'px)';
+      });
+      box.addEventListener('mouseleave',()=>media.style.transform='');
+    });
+  }
+
+  if(!reduce && 'IntersectionObserver' in window){
+    document.querySelectorAll('[data-count]').forEach(el=>{
+      const target=parseInt(el.dataset.count,10);
+      const suffix=el.dataset.suffix||'';
+      const observer=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(!entry.isIntersecting)return;
+          observer.disconnect();
+          const start=performance.now();
+          const duration=900;
+          function step(now){
+            const p=Math.min(1,(now-start)/duration);
+            const eased=1-Math.pow(1-p,3);
+            el.textContent=Math.round(target*eased)+suffix;
+            if(p<1)requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      },{threshold:.6});
+      observer.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>
