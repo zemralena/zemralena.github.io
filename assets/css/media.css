@@ -11,7 +11,7 @@ button,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.35;cur
 .section-intro{font-size:16px;line-height:1.7;max-width:720px;margin:-15px 0 38px}
 .text-link{font-size:12px;text-underline-offset:5px;flex-shrink:0}.media-intro{padding-top:20px}
 .media img,.hero-media img{object-fit:contain;max-height:none}.hero-media img{height:auto}
-.work-visual img{object-fit:contain;background:#f5f5f5}.campaign-visual img,.campaign-hero img,.work-card:hover .campaign-visual img,body.motion-paused .campaign-visual img{transform:none!important;object-fit:contain}
+.work-visual img{object-fit:contain;background:#f5f5f5}.work-visual.athletics-visual img{object-fit:cover}.campaign-visual img,.campaign-hero img,.work-card:hover .campaign-visual img,body.motion-paused .campaign-visual img{transform:none!important;object-fit:contain}
 .work-card:hover .work-visual img,.work-card:hover .work-visual video,.card:hover .media img,.card:hover .media video{transform:none}
 .campaign-hero{aspect-ratio:auto}.campaign-hero img{height:auto}
 .pipeline-feature{display:flex;align-items:center;background:#061c35}.pipeline-feature img{background:#061c35}
