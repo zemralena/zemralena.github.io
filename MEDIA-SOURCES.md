@@ -47,3 +47,7 @@ These are project-result visualizations. No visitor-tracking service or analytic
 ## Newsletter replacement
 
 The TEDxPSU preview now embeds the public November 2025 “Save the Date: TEDxPSU Conference” email from https://mailchi.mp/372aaddbbebc/announcing-the-tedxpsu-2026-conference-theme-50307. The recipient-specific query parameter is omitted. Its matching supplied November Mailchimp report confirms November 18, 2025, 407 delivered and 68.6% open rate (snapshot February 18, 2026). This replaces the October newsletter and its metrics. The original public newsletter remains available through the full-newsletter link.
+
+## TEDxPSU final presentation refinements
+
+Attendance of approximately 400 and doubled attendance are supplied directly by Zemra. The mission-led introduction paraphrases TEDxPSU’s official mission at https://www.tedxpsu.com/. The eight Zeitgeist cards now use uncropped original JPG graphics from the official 2026 conference page, replacing screenshot versions. Paper Towns uses the existing original papertowns-animation.mp4. Visible reels autoplay muted; manual pause and reduced-motion preferences are respected.

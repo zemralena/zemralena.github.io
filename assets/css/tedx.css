@@ -25,4 +25,15 @@
 .reel-story.horizontal-scroll{padding:0;position:relative}
 .horizontal-scroll .reel-stage{position:sticky;top:64px;height:calc(100svh - 64px);align-items:center;scroll-snap-type:none;overflow-x:hidden;justify-content:flex-start;padding-block:25px}
 .horizontal-scroll .reel-scene{position:relative}
+.reel-story,.paper-towns{background:#fff}
+.horizontal-scroll .reel-stage{height:min(590px,calc(100svh - 64px));padding-block:18px;background:#fff}
+.phone-views{font-size:11px;bottom:46px;background:#080808;padding:2px 0 2px 5px}
+.speaker-grid,.paper-towns .speaker-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 14px}
+.speaker-card img{aspect-ratio:1;object-fit:contain;background:#fff;box-shadow:none}
+.speaker-card span{margin-top:8px;font-size:11px}
+.conference-heading h2{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:clamp(38px,6vw,86px);letter-spacing:-.055em}
+.speaker-section .head h2,.paper-towns .head h2{font-size:clamp(27px,3.4vw,46px)}
+.key-results{grid-template-columns:repeat(4,minmax(0,1fr))}.key-results strong{font-size:clamp(35px,5vw,64px)}
+.program-details>h3{font:400 32px Georgia,serif;margin:25px 0}.paper-mark{width:100%;height:auto;object-fit:contain}
+@media(max-width:650px){.speaker-grid,.paper-towns .speaker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.key-results{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:25px}.conference-heading h2{font-size:clamp(38px,10vw,65px)}}
 @media(max-width:700px){.newsletter-section{grid-template-columns:1fr;gap:22px}.newsletter-copy .email-stat{margin:16px 0}.newsletter-frame{height:380px}}

@@ -16,7 +16,7 @@
     if(reduced.matches||innerHeight<650||distance<1)return;
     travel=Math.max(distance,innerHeight*.9);
     story.classList.add('horizontal-scroll');
-    story.style.height=`${innerHeight-64+travel}px`;
+    story.style.height=`${Math.min(590,innerHeight-64)+travel}px`;
     update();
   }
   addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}},{passive:true});
@@ -33,10 +33,14 @@
     video.controls=false;player.hidden=false;
     const play=player.querySelector('[data-play]'),sound=player.querySelector('[data-sound]');
     play.textContent='Play';
-    play.addEventListener('click',()=>video.paused?video.play().catch(()=>{}):video.pause());
-    sound.addEventListener('click',()=>{video.muted=!video.muted;sound.textContent=video.muted?'Sound on':'Mute';});
-    video.addEventListener('play',()=>{play.textContent='Pause';scenes.forEach(other=>{if(other!==scene)other.querySelector('video').pause();});});
+    play.addEventListener('click',()=>{video.dataset.userPaused=String(!video.paused);video.paused?video.play().catch(()=>{}):video.pause();});
+    sound.addEventListener('click',()=>{video.muted=!video.muted;sound.textContent=video.muted?'Sound on':'Mute';if(!video.muted)scenes.forEach(other=>{const v=other.querySelector('video');if(v!==video){v.muted=true;other.querySelector('[data-sound]').textContent='Sound on';}});});
+    video.addEventListener('play',()=>{play.textContent='Pause';});
     video.addEventListener('pause',()=>{play.textContent='Play';});
   });
+  function syncVideos(){scenes.forEach(scene=>{const v=scene.querySelector('video');if(v.dataset.visible==='true'&&!document.hidden&&!reduced.matches&&v.dataset.userPaused!=='true'){if(v.paused)v.play().catch(()=>{});}else v.pause();});}
+  const observer=new IntersectionObserver(entries=>{entries.forEach(({target,intersectionRatio})=>{target.dataset.visible=String(intersectionRatio>.45);});syncVideos();},{threshold:[0,.45,.5,1]});
+  scenes.forEach(scene=>observer.observe(scene.querySelector('video')));
+  document.addEventListener('visibilitychange',syncVideos);reduced.addEventListener('change',syncVideos);
   layout();
 })();
