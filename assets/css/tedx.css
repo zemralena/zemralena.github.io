@@ -16,3 +16,10 @@
 .reels-heading .head{margin-bottom:0}.reel-source{margin-top:0}
 @media(min-width:1450px){.reel-stage{justify-content:center;gap:24px}.reel-scene{flex-basis:240px}}
 @media(max-width:700px){.newsletter-frame{height:440px}}
+.newsletter-section{padding-top:35px;padding-bottom:40px;gap:40px;grid-template-columns:.65fr 1fr}
+.newsletter-copy h2{font-size:clamp(34px,4vw,48px)}
+.newsletter-copy .email-stat{border:0;padding:0;margin:22px 0}
+.newsletter-copy .email-stat strong{font-size:34px}.newsletter-copy .email-stat span{display:block;margin-top:5px}
+.newsletter-frame{height:420px}.email-envelope{padding:14px 18px}.email-chrome{padding:10px 18px}
+.reel-stage{padding-bottom:15px}.reel-story{padding-bottom:15px}
+@media(max-width:700px){.newsletter-section{grid-template-columns:1fr;gap:22px}.newsletter-copy .email-stat{margin:16px 0}.newsletter-frame{height:380px}}
