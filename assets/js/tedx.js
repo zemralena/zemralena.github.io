@@ -53,7 +53,7 @@
     function reset(){cards.forEach(card=>{card.style.removeProperty('--wave-y');card.style.removeProperty('--wave-tilt');});}
     grid.addEventListener('pointermove',e=>{
       if(reduced.matches||!fine.matches)return;x=e.clientX;y=e.clientY;
-      if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;cards.forEach(card=>{const r=card.getBoundingClientRect();const dx=x-r.left-r.width/2,dy=y-r.top-r.height/2,d=Math.hypot(dx,dy);const wave=Math.cos(d/90)*Math.exp(-d/300);card.style.setProperty('--wave-y',`${-10*wave}px`);card.style.setProperty('--wave-tilt',`${Math.max(-2,Math.min(2,dx/100))*Math.exp(-d/250)}deg`);});});
+      if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;cards.forEach(card=>{const r=card.getBoundingClientRect();const dx=x-r.left-r.width/2,dy=y-r.top-r.height/2,d=Math.hypot(dx,dy);const wave=Math.cos(d/105)*Math.exp(-d/450);card.style.setProperty('--wave-y',`${-28*wave}px`);card.style.setProperty('--wave-tilt',`${Math.max(-5,Math.min(5,dx/45))*Math.exp(-d/400)}deg`);});});
     });grid.addEventListener('pointerleave',reset);reduced.addEventListener('change',reset);
   });
   const reader=document.querySelector('[data-reader="paper-program"]');
