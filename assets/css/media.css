@@ -1,5 +1,5 @@
 /* Media stays at its native proportions inside the established V5 layout. */
-.education.education-credential{display:grid;grid-template-columns:48px minmax(0,1fr) auto;align-items:center;gap:16px;margin-top:28px;padding:14px 0;border-top:1px solid #bfc4ca;border-bottom:1px solid #e1e3e6;color:#14243b}
+.education.education-credential{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:center;gap:16px;margin-top:28px;padding:14px 0;border-top:1px solid #bfc4ca;border-bottom:1px solid #e1e3e6;color:#14243b}
 .education-seal{display:block;width:48px;height:48px;object-fit:contain}
 .education-details h2{font:400 17px/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.01em;margin:0 0 3px}
 .education-college{font-size:10px;font-weight:600;line-height:1.5;margin:0 0 4px}
