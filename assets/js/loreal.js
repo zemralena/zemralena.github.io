@@ -26,7 +26,8 @@
       const eased = entrance * entrance * (3 - 2 * entrance);
       scene.style.zIndex = String(index + 1);
       scene.style.visibility = entrance > 0 ? 'visible' : 'hidden';
-      scene.style.clipPath = `inset(${((1 - eased) * 100).toFixed(3)}% 0 0 0)`;
+      scene.style.clipPath = 'inset(0)';
+      scene.style.opacity = String(eased);
       const art = scene.querySelector('.image-open');
       if (art) art.style.transform = `translate3d(0,${((1-eased)*28).toFixed(2)}px,0) scale(${(.975+.025*eased).toFixed(4)})`;
       const active = index === activeIndex;
