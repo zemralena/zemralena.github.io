@@ -58,3 +58,9 @@
 @media(max-width:600px){.program-scroll.is-guided .spread-reader .reader-page{height:auto;max-height:calc(100svh - 215px)}}
 @media(prefers-reduced-motion:reduce){.speaker-card img,.speaker-card:hover img{transform:none!important}}
 @media(max-width:600px){.program-details .spread-reader .reader-page{width:auto;max-width:100%;height:auto;max-height:430px}}
+
+/* A bold TEDx mark gives the opening its own visual identity. */
+.tedx-intro{position:relative;isolation:isolate;overflow:hidden;background:#f5f3f0;padding-bottom:38px}
+.tedx-opening-art{position:absolute;z-index:-1;right:-12px;top:-35px;width:40%;height:calc(100% + 70px);transform:rotate(-9deg);pointer-events:none}
+.tedx-intro .hero-meta{display:block;max-width:58%}.tedx-intro .links{justify-content:flex-start;margin-top:24px}
+@media(max-width:650px){.tedx-opening-art{width:140px;height:165px;right:-36px;top:35px;transform:rotate(-9deg)}.tedx-intro .hero-meta{max-width:100%}.tedx-intro h1{position:relative;max-width:calc(100% - 70px);font-size:clamp(45px,10vw,65px)}.tedx-intro .hero-meta p{font-size:16px}.tedx-intro .project-type{margin-top:24px}}
