@@ -1,4 +1,11 @@
 /* Media stays at its native proportions inside the established V5 layout. */
+.education.education-credential{display:grid;grid-template-columns:88px minmax(0,1fr) auto;align-items:center;gap:26px;margin-top:42px;padding:28px 0;border-top:1px solid #bfc4ca;border-bottom:1px solid #e1e3e6;color:#14243b}
+.education-seal{display:block;width:88px;height:88px;object-fit:contain}
+.education-details h2{font:400 clamp(21px,2.3vw,30px)/1.18 Georgia,"Times New Roman",serif;letter-spacing:-.02em;margin:0 0 7px}
+.education-college{font-size:12px;font-weight:600;line-height:1.5;margin:0 0 13px}
+.education-degree{font-size:12px;line-height:1.65;margin:0;color:#3c4653}.education-degree span{display:block;color:#59616b;font-size:11px}
+.education-date{font-size:11px;white-space:nowrap;margin:0;align-self:end;padding-bottom:3px;color:#59616b}
+@media(max-width:600px){.education.education-credential{grid-template-columns:64px minmax(0,1fr);gap:18px;padding:24px 0;margin-top:30px}.education-seal{width:64px;height:64px;align-self:start}.education-details h2{font-size:23px}.education-date{grid-column:2;margin-top:-10px}.education-college{font-size:11px}.education-degree{font-size:11px}}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 button,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.35;cursor:default}
 .section-intro{font-size:16px;line-height:1.7;max-width:720px;margin:-15px 0 38px}
