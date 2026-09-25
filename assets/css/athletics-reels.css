@@ -84,3 +84,12 @@
 .graphic-step figcaption h3{max-width:12ch;margin:18px 0 0;font:400 clamp(32px,4vw,58px)/1 Georgia,"Times New Roman",serif;letter-spacing:-.03em}
 @media(max-width:760px){.graphics-intro{grid-template-columns:1fr}.graphics-intro span{display:none}.graphic-step{min-height:88svh;grid-template-columns:1fr;padding-block:7svh 12svh}.graphic-frame{top:76px;min-height:0}.graphic-frame img{max-height:62svh}.graphic-step figcaption{position:relative;top:auto;display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:16px;padding-top:12px}.graphic-step figcaption h3{max-width:none;margin:0;font-size:28px}}
 @media(prefers-reduced-motion:reduce){.graphic-frame,.graphic-step figcaption{position:relative;top:auto}}
+
+/* Results close the case study with the same clear hierarchy as TEDxPSU. */
+.athletics-results{padding-top:clamp(80px,9vw,140px);padding-bottom:clamp(80px,9vw,130px)}
+.results-heading{padding-bottom:24px;border-bottom:1px solid #111}
+.results-heading h2{margin:0;font:400 clamp(38px,4.5vw,62px)/1 Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.results-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3vw,48px);padding-top:28px}
+.results-grid strong{display:block;font:700 clamp(44px,5vw,72px)/1 Arial,Helvetica,sans-serif;letter-spacing:-.04em}
+.results-grid span{display:block;margin-top:12px;font-size:12px}
+@media(max-width:650px){.results-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 18px}.results-grid strong{font-size:42px}.results-grid span{font-size:11px}}
