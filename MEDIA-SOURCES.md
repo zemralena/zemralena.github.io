@@ -43,3 +43,7 @@ These are project-result visualizations. No visitor-tracking service or analytic
 - https://zemralenaportfolio.my.canva.site/
 
 - Fifth reel: `dc74d35a44fa4fcb9ceaf859818104eb 2.MP4`, supplied directly by Zemra. Published first 23 seconds, excluding the blank tail and Instagram end card; original framing and audio retained.
+
+## Newsletter replacement
+
+The TEDxPSU preview now embeds the public November 2025 “Save the Date: TEDxPSU Conference” email from https://mailchi.mp/372aaddbbebc/announcing-the-tedxpsu-2026-conference-theme-50307. The recipient-specific query parameter is omitted. Its matching supplied November Mailchimp report confirms November 18, 2025, 407 delivered and 68.6% open rate (snapshot February 18, 2026). This replaces the October newsletter and its metrics. The original public newsletter remains available through the full-newsletter link.
