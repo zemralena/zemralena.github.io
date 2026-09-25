@@ -1,5 +1,9 @@
 # Portfolio media and results
 
+## Penn State Athletics
+
+- Reel view counts are the preserved project analytics: AMCC Volleyball Championship 13.5K, Soccer at golden hour 18.8K, and Volleyball match night 26.4K.
+
 ## TEDxPSU presentation update
 
 - Four reels retain their original vertical framing. The added vision reel uses `93e43dbaaaff466ab6c4e454f7e41366.mp4`, trimmed to 7.2 seconds before the Instagram end card. Audio is preserved; playback starts muted.
