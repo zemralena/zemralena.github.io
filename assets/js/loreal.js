@@ -3,7 +3,7 @@
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
   const story = document.querySelector('.campaign-takeover');
   const scenes = [story.querySelector('.campaign-opening'), ...story.querySelectorAll('.story-panel')];
-  const labels = ['The campaign', 'Out-of-home', 'Print concepts', 'Prouder. Louder. Bolder.', 'Houston mural'];
+  const labels = ['The campaign', 'Out-of-home', 'Print concepts', 'Prouder. Louder. Bolder.'];
   const controls = story.querySelector('.sequence-controls');
   const previous = controls.querySelector('[data-scene-prev]');
   const next = controls.querySelector('[data-scene-next]');
