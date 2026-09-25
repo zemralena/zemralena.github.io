@@ -93,3 +93,27 @@
 .results-grid strong{display:block;font:700 clamp(44px,5vw,72px)/1 Arial,Helvetica,sans-serif;letter-spacing:-.04em}
 .results-grid span{display:block;margin-top:12px;font-size:12px}
 @media(max-width:650px){.results-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 18px}.results-grid strong{font-size:42px}.results-grid span{font-size:11px}}
+
+/* Monochrome case-study opening with the Penn State seal as the visual anchor. */
+.athletics-intro{position:relative;isolation:isolate;overflow:hidden;background:#000;color:#fff;padding-bottom:clamp(70px,8vw,120px)}
+.athletics-intro a,.athletics-intro .eyebrow,.athletics-intro .project-type{color:#fff}
+.athletics-intro h1{position:relative;max-width:68%;color:#fff}
+.athletics-intro .hero-meta{position:relative;display:block;max-width:52%}
+.athletics-hero-mark{position:absolute;z-index:-1;right:clamp(-40px,1vw,20px);top:50%;width:min(43vw,620px);height:auto;transform:translateY(-50%);filter:invert(1) grayscale(1);opacity:.36;pointer-events:none}
+
+/* Every graphic receives a full, uncropped viewport with no overlay copy. */
+.graphics-story{background:#000;color:#fff;padding:clamp(76px,8vw,120px) clamp(20px,6vw,92px) 0}
+.graphics-intro{display:block;padding-bottom:30px;border-bottom:1px solid #fff}
+.graphics-intro h2{margin:0;font:400 clamp(42px,5vw,68px)/1 Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.graphic-step{min-height:112svh;margin:0;padding:8svh 0 20svh;display:block;border-bottom:1px solid #ffffff40}
+.graphic-frame{position:sticky;top:calc(64px + 4svh);width:min(1120px,100%);height:calc(100svh - 150px);min-height:0;margin:0 auto;display:grid;place-items:center;background:#000;overflow:hidden;box-sizing:border-box}
+.graphic-frame img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
+
+.reels-heading{padding-top:clamp(80px,9vw,130px);padding-bottom:20px}
+.reels-heading .head{margin:0}
+.reels-heading .head h2{font-size:clamp(44px,5vw,68px)}
+.reel-story{background:#fff}
+.instagram-account>.phone-views{position:static;display:block;margin-left:auto;padding:0;background:transparent;font-size:9px;font-weight:700;white-space:nowrap}
+
+@media(max-width:700px){.athletics-intro h1{max-width:100%;font-size:clamp(48px,13vw,68px)}.athletics-intro .hero-meta{max-width:100%;padding-right:55px}.athletics-hero-mark{right:-55px;top:120px;width:210px;transform:none;opacity:.2}.graphics-intro h2{font-size:44px}.graphic-step{min-height:92svh;padding:6svh 0 14svh}.graphic-frame{top:76px;height:calc(100svh - 145px);padding:10px}.reels-heading{padding-top:75px}}
+@media(prefers-reduced-motion:reduce){.graphic-frame{position:relative;top:auto;height:auto;min-height:60svh}}
