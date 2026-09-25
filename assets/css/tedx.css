@@ -22,4 +22,7 @@
 .newsletter-copy .email-stat strong{font-size:34px}.newsletter-copy .email-stat span{display:block;margin-top:5px}
 .newsletter-frame{height:420px}.email-envelope{padding:14px 18px}.email-chrome{padding:10px 18px}
 .reel-stage{padding-bottom:15px}.reel-story{padding-bottom:15px}
+.reel-story.horizontal-scroll{padding:0;position:relative}
+.horizontal-scroll .reel-stage{position:sticky;top:64px;height:calc(100svh - 64px);align-items:center;scroll-snap-type:none;overflow-x:hidden;justify-content:flex-start;padding-block:25px}
+.horizontal-scroll .reel-scene{position:relative}
 @media(max-width:700px){.newsletter-section{grid-template-columns:1fr;gap:22px}.newsletter-copy .email-stat{margin:16px 0}.newsletter-frame{height:380px}}
