@@ -69,3 +69,18 @@
 .reel-stage{justify-content:center;gap:30px}.horizontal-scroll .reel-stage{justify-content:flex-start}.reel-scene>h3{font:400 19px Georgia,serif;margin:0;text-align:center}.instagram-account{min-height:28px}.instagram-account img{background:white}.reel-story{padding-top:0}
 @media(max-width:820px){.reel-stage{justify-content:flex-start}}
 .reel-story{background:#fff}.is-unmuted .sound-off{display:none}.is-unmuted .sound-on{display:block}
+
+/* A vertical portfolio sequence gives each campaign graphic a full moment. */
+.graphics-story{background:#0b1427;color:#fff;padding:clamp(70px,8vw,120px) clamp(20px,6vw,92px) 0}
+.graphics-intro{display:grid;grid-template-columns:1fr auto;align-items:end;gap:20px;padding-bottom:36px;border-bottom:1px solid #ffffff66}
+.graphics-intro p{grid-column:1/-1;margin:0;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.graphics-intro h2{margin:0;font:400 clamp(46px,7vw,96px)/.95 Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.graphics-intro span{font-size:11px;padding-bottom:8px}
+.graphic-step{position:relative;min-height:95svh;margin:0;padding:8svh 0 18svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,30%);gap:clamp(28px,5vw,80px);align-items:start;border-bottom:1px solid #ffffff33}
+.graphic-frame{position:sticky;top:calc(64px + 5svh);display:grid;place-items:center;min-height:min(72svh,760px);background:#f5f5f3;overflow:hidden}
+.graphic-frame img{display:block;width:100%;height:auto;max-height:min(72svh,760px);object-fit:contain}
+.graphic-step figcaption{position:sticky;top:calc(64px + 12svh);padding-top:12px;border-top:1px solid #fff}
+.graphic-step figcaption span{font-size:10px;letter-spacing:.16em}
+.graphic-step figcaption h3{max-width:12ch;margin:18px 0 0;font:400 clamp(32px,4vw,58px)/1 Georgia,"Times New Roman",serif;letter-spacing:-.03em}
+@media(max-width:760px){.graphics-intro{grid-template-columns:1fr}.graphics-intro span{display:none}.graphic-step{min-height:88svh;grid-template-columns:1fr;padding-block:7svh 12svh}.graphic-frame{top:76px;min-height:0}.graphic-frame img{max-height:62svh}.graphic-step figcaption{position:relative;top:auto;display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:16px;padding-top:12px}.graphic-step figcaption h3{max-width:none;margin:0;font-size:28px}}
+@media(prefers-reduced-motion:reduce){.graphic-frame,.graphic-step figcaption{position:relative;top:auto}}
