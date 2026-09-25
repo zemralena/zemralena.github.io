@@ -1,5 +1,13 @@
 # Portfolio media and results
 
+## TEDxPSU presentation update
+
+- Four reels retain their original vertical framing. The added vision reel uses `93e43dbaaaff466ab6c4e454f7e41366.mp4`, trimmed to 7.2 seconds before the Instagram end card. Audio is preserved; playback starts muted.
+- Reel views are February 18, 2026 Instagram snapshots: invitation 41.7K, venue tour 25.1K, conference day 5K. The supplied reports do not identify the vision reel's view count, so no number is assigned to it.
+- Headline results round 183,648 views and 52,547 accounts reached to 183.6K and 52.5K; external link taps remain 607. These are the team's account results over Instagram's reported last 90 days, not individually attributable results.
+- The October newsletter preview is the original supplied creative. Its 79.3% open rate and 406 delivered are from the October 29 theme announcement report, captured February 18, 2026.
+- Paper Towns speaker graphics and conference mark are original TEDxPSU website assets already included in the portfolio; program/design-team credit is retained.
+
 The site's layout continues the supplied Refined V5 portfolio. Media added in September 2026 comes from the owner's supplied Portfolio Materials folder.
 
 ## Original media
