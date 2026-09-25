@@ -3,4 +3,16 @@
 @media(prefers-reduced-motion:reduce){.speaker-card:hover img,.speaker-card:focus-visible img{transform:none;box-shadow:none}.reel-scene{transition:none}}
 @media(max-width:700px){.is-enhanced .instagram-phone{--phone-width:min(245px,calc((100svh - 425px)*.5625))}}
 .newsletter-frame{display:block;width:100%;height:580px;border:0;background:#000}
+.reel-story{padding:36px 0 24px;background:#f5f4f1}
+.reel-stage{display:flex;gap:30px;overflow-x:auto;scroll-snap-type:x proximity;padding:8px clamp(20px,4vw,60px) 28px;scrollbar-width:thin;scrollbar-color:#888 transparent}
+.reel-scene{display:flex;flex:0 0 240px;flex-direction:column;gap:22px;min-height:0;padding:0;scroll-snap-align:center}
+.reel-copy{order:2;text-align:left;width:100%}.reel-copy .eyebrow{font-size:9px;margin:0}.reel-copy h3{font-size:26px;margin:10px 0}.reel-copy>p:not(.eyebrow){display:none}
+.instagram-phone{--phone-width:240px;flex:none;padding:6px;border-radius:34px;box-shadow:0 0 0 1px #252525,0 12px 22px #0001}
+.phone-status{height:22px;padding:0 10px;font-size:8px}.phone-status i{height:18px;width:64px}
+.instagram-top{padding:5px 8px 7px;font-size:13px}.instagram-phone video{aspect-ratio:9/16;object-fit:contain}
+.instagram-account{padding:6px 7px 2px;gap:5px;font-size:9px}.instagram-account img{width:18px;height:18px}.instagram-account>span{display:none}
+.phone-views{position:absolute;right:13px;bottom:47px;font-size:10px;font-weight:700}
+.instagram-actions,.instagram-bottom{display:none}.reel-player{padding:3px 7px;gap:6px}.reel-player button{padding:5px 10px;font-size:10px}.home-indicator{height:3px;width:75px;margin:6px auto 2px}
+.reels-heading .head{margin-bottom:0}.reel-source{margin-top:0}
+@media(min-width:1450px){.reel-stage{justify-content:center;gap:24px}.reel-scene{flex-basis:240px}}
 @media(max-width:700px){.newsletter-frame{height:440px}}
