@@ -66,3 +66,11 @@
 @media(max-width:650px){.tedx-opening-art{width:140px;height:165px;right:-36px;top:35px;transform:rotate(-9deg)}.tedx-intro .hero-meta{max-width:100%}.tedx-intro h1{position:relative;max-width:calc(100% - 70px);font-size:clamp(45px,10vw,65px)}.tedx-intro .hero-meta p{font-size:16px}.tedx-intro .project-type{margin-top:24px}}
 
 .tedx-intro a,.tedx-intro .project-type{color:#fff}
+/* The conference collage fades into one continuous black opening. */
+.tedx-intro:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('../video/zeitgeist-landscape.jpg') center 38%/180% auto no-repeat;filter:grayscale(1);opacity:.16;mask-image:linear-gradient(to bottom,#000 45%,transparent 100%)}
+.tedx-opening-art{mask-image:linear-gradient(to bottom,#000 65%,transparent 100%)}
+#zeitgeist>.conference-opening{background:#000;color:#fff;padding-top:22px;padding-bottom:0}
+#zeitgeist .conference-heading{margin-bottom:22px}
+#zeitgeist .logo-film{margin-inline:calc(-1 * clamp(20px,6vw,92px));overflow:hidden}
+#zeitgeist .logo-film video{display:block;width:100%;max-height:680px;mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 94%,transparent)}
+@media(max-width:650px){.tedx-intro:before{background-size:auto 130%;opacity:.13}.tedx-opening-art{mask-image:none}#zeitgeist>.conference-opening{padding-top:16px}}
