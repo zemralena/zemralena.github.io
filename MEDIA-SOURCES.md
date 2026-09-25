@@ -3,7 +3,7 @@
 ## TEDxPSU presentation update
 
 - Four reels retain their original vertical framing. The added vision reel uses `93e43dbaaaff466ab6c4e454f7e41366.mp4`, trimmed to 7.2 seconds before the Instagram end card. Audio is preserved; playback starts muted.
-- Reel views are February 18, 2026 Instagram snapshots: invitation 41.7K, venue tour 25.1K, conference day 5K. The supplied reports do not identify the vision reel's view count, so no number is assigned to it.
+- Reel views are February 18, 2026 Instagram snapshots: invitation 41.7K, venue tour 25.1K, conference day 5K. Zemra subsequently supplied 2K views each for the vision reel and the added Through the Years reel. These two counts are owner-reported, not attributed to the February export.
 - Headline results round 183,648 views and 52,547 accounts reached to 183.6K and 52.5K; external link taps remain 607. These are the team's account results over Instagram's reported last 90 days, not individually attributable results.
 - The October newsletter preview is the original supplied creative. Its 79.3% open rate and 406 delivered are from the October 29 theme announcement report, captured February 18, 2026.
 - Paper Towns speaker graphics and conference mark are original TEDxPSU website assets already included in the portfolio; program/design-team credit is retained.
@@ -41,3 +41,5 @@ These are project-result visualizations. No visitor-tracking service or analytic
 - https://www.tedxpsu.com/2025-paper-towns
 - https://pipeline.psu.edu/
 - https://zemralenaportfolio.my.canva.site/
+
+- Fifth reel: `dc74d35a44fa4fcb9ceaf859818104eb 2.MP4`, supplied directly by Zemra. Published first 23 seconds, excluding the blank tail and Instagram end card; original framing and audio retained.
