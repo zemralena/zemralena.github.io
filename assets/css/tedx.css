@@ -52,4 +52,9 @@
 @media(max-width:600px){.paper-opening h2{font-size:clamp(38px,10vw,58px)}.program-details .reader-stage{padding:16px}.program-details .reader-page{max-height:430px}.program-details .reader-controls{gap:2px}.attendance-result{padding-left:12px}}
 .program-details .spread-reader .reader-page{width:auto;max-width:50%;height:480px}
 .newsletter-copy .email-stat{border-left:3px solid #d90025;padding-left:18px}.newsletter-copy .email-stat strong{color:#d90025}
+.tedx-intro{padding-top:45px;padding-bottom:40px}.tedx-intro h1{margin-top:24px}.tedx-intro .project-type{margin-top:15px}.tedx-intro .hero-meta{margin-top:20px}.tedx-intro .hero-meta p{max-width:480px;font-size:17px}
+@media(hover:hover) and (pointer:fine){.speaker-card img,.speaker-card:hover img{transform:translateY(var(--wave-y,0px)) rotate(var(--wave-tilt,0deg));transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}.speaker-card:hover img{box-shadow:0 12px 22px #0002}}
+.program-scroll.is-guided{position:relative}.program-scroll.is-guided .document-reader{position:sticky;top:80px}.program-scroll.is-guided .reader-stage{padding:22px}.program-scroll.is-guided .spread-reader .reader-page{height:min(480px,calc(100svh - 215px));max-height:480px}
+@media(max-width:600px){.program-scroll.is-guided .spread-reader .reader-page{height:auto;max-height:calc(100svh - 215px)}}
+@media(prefers-reduced-motion:reduce){.speaker-card img,.speaker-card:hover img{transform:none!important}}
 @media(max-width:600px){.program-details .spread-reader .reader-page{width:auto;max-width:100%;height:auto;max-height:430px}}

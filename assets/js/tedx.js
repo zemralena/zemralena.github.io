@@ -46,4 +46,23 @@
   scenes.forEach(scene=>observer.observe(scene.querySelector('video')));
   document.addEventListener('visibilitychange',syncVideos);reduced.addEventListener('change',syncVideos);
   layout();
+  // A spatial wave follows the pointer without distorting the original artwork.
+  const fine=matchMedia('(hover:hover) and (pointer:fine)');
+  document.querySelectorAll('.speaker-grid').forEach(grid=>{
+    const cards=[...grid.querySelectorAll('.speaker-card')];let pending=false,x=0,y=0;
+    function reset(){cards.forEach(card=>{card.style.removeProperty('--wave-y');card.style.removeProperty('--wave-tilt');});}
+    grid.addEventListener('pointermove',e=>{
+      if(reduced.matches||!fine.matches)return;x=e.clientX;y=e.clientY;
+      if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;cards.forEach(card=>{const r=card.getBoundingClientRect();const dx=x-r.left-r.width/2,dy=y-r.top-r.height/2,d=Math.hypot(dx,dy);const wave=Math.cos(d/90)*Math.exp(-d/300);card.style.setProperty('--wave-y',`${-10*wave}px`);card.style.setProperty('--wave-tilt',`${Math.max(-2,Math.min(2,dx/100))*Math.exp(-d/250)}deg`);});});
+    });grid.addEventListener('pointerleave',reset);reduced.addEventListener('change',reset);
+  });
+  const reader=document.querySelector('[data-reader="paper-program"]');
+  const wrap=document.createElement('div');wrap.className='program-scroll';reader.before(wrap);wrap.append(reader);
+  const select=reader.querySelector('select');let last=-1,manual=false,programTravel=0;
+  function programLayout(){wrap.classList.remove('is-guided');wrap.style.height='';if(reduced.matches||innerHeight<700)return;wrap.classList.add('is-guided');programTravel=innerHeight*1.4;wrap.style.height=`${reader.offsetHeight+programTravel}px`;programUpdate();}
+  function programUpdate(){if(!wrap.classList.contains('is-guided')||manual)return;const r=wrap.getBoundingClientRect();if(r.top>innerHeight||r.bottom<0)return;const progress=Math.max(0,Math.min(.999,(80-r.top)/programTravel));const part=Math.floor(progress*3);if(part===last)return;last=part;select.value=String(part*2);select.dispatchEvent(new Event('change',{bubbles:true}));if(!reduced.matches)reader.querySelector('.reader-stage').animate([{opacity:.55,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:350,easing:'ease-out'});}
+  reader.querySelector('.reader-controls').addEventListener('pointerdown',()=>{manual=true;});
+  select.addEventListener('change',e=>{if(e.isTrusted)manual=true;});
+  addEventListener('scroll',programUpdate,{passive:true});addEventListener('resize',programLayout);reduced.addEventListener('change',programLayout);
+  programLayout();
 })();
