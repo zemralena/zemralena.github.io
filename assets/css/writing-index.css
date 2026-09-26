@@ -1,0 +1,187 @@
+.project-writing,
+.project-writing main,
+.project-writing .writing-header,
+.project-writing .writing-index {
+  background: var(--portfolio-cream);
+}
+
+.project-writing nav {
+  background: var(--portfolio-cream);
+}
+
+.project-writing nav .brand {
+  color: var(--portfolio-ocean);
+}
+
+.project-writing .writing-header {
+  min-height: min(620px, 68svh);
+  padding: clamp(30px, 4vw, 58px) clamp(20px, 6vw, 92px) clamp(48px, 7vw, 94px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-writing .writing-header .back {
+  color: var(--portfolio-navy);
+}
+
+.project-writing .writing-intro {
+  max-width: 1180px;
+}
+
+.project-writing .writing-header h1 {
+  max-width: 1120px;
+  margin: 0;
+  color: var(--portfolio-ocean);
+  font-family: var(--portfolio-sans);
+  font-size: clamp(62px, 9vw, 126px);
+  font-weight: 760;
+  line-height: .86;
+  letter-spacing: -.055em;
+  text-transform: none;
+}
+
+.project-writing .writing-header p {
+  max-width: 720px;
+  margin: clamp(26px, 4vw, 46px) 0 0;
+  color: var(--portfolio-navy);
+  font-size: clamp(20px, 2.1vw, 30px);
+  font-weight: 650;
+  line-height: 1.18;
+}
+
+.project-writing .writing-index {
+  padding: 0 clamp(20px, 6vw, 92px) clamp(64px, 8vw, 120px);
+}
+
+.project-writing .writing-list {
+  display: grid;
+  gap: 14px;
+}
+
+.project-writing .writing-list a {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) 34px;
+  gap: 24px;
+  align-items: center;
+  min-height: 112px;
+  padding: 24px clamp(22px, 3vw, 42px);
+  color: var(--portfolio-navy);
+  background: var(--portfolio-sky);
+  border: 2px solid var(--portfolio-navy);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: transform .25s ease, background-color .25s ease;
+}
+
+.project-writing .writing-list time {
+  color: var(--portfolio-navy);
+  font-size: 12px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+}
+
+.project-writing .writing-list span {
+  font-family: var(--portfolio-sans);
+  font-size: clamp(24px, 2.8vw, 40px);
+  font-weight: 730;
+  line-height: 1.02;
+  letter-spacing: -.035em;
+}
+
+.project-writing .writing-list b {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: right;
+  transition: transform .25s ease;
+}
+
+.project-writing .writing-list a:hover,
+.project-writing .writing-list a:focus-visible {
+  background: var(--portfolio-butter);
+  transform: translateY(-3px);
+}
+
+.project-writing .writing-list a:hover b,
+.project-writing .writing-list a:focus-visible b {
+  transform: translate(3px, -3px);
+}
+
+.project-writing .writing-more {
+  margin-top: clamp(28px, 4vw, 50px);
+  padding: clamp(28px, 4vw, 48px);
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--portfolio-navy);
+  background: var(--portfolio-butter);
+  border-radius: 24px;
+}
+
+.project-writing .writing-more p {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 58px);
+  font-weight: 760;
+  line-height: .96;
+  letter-spacing: -.04em;
+}
+
+.project-writing .writing-more a {
+  flex: 0 0 auto;
+  padding: 12px 18px;
+  color: var(--portfolio-cream);
+  background: var(--portfolio-navy);
+  border: 2px solid var(--portfolio-navy);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.project-writing .writing-more a:hover,
+.project-writing .writing-more a:focus-visible {
+  color: var(--portfolio-navy);
+  background: var(--portfolio-cream);
+}
+
+@media (max-width: 700px) {
+  .project-writing .writing-header {
+    min-height: 480px;
+    padding-top: 30px;
+  }
+
+  .project-writing .writing-header h1 {
+    font-size: clamp(56px, 18vw, 82px);
+  }
+
+  .project-writing .writing-list a {
+    grid-template-columns: 1fr 24px;
+    gap: 9px 14px;
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .project-writing .writing-list time {
+    grid-column: 1 / -1;
+  }
+
+  .project-writing .writing-list b {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .project-writing .writing-more {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-writing .writing-list a,
+  .project-writing .writing-list b {
+    transition: none;
+  }
+}

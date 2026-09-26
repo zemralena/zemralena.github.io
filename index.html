@@ -4,195 +4,141 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Zemra Lena | Marketing Portfolio</title>
-<meta name="description" content="Zemra Lena is a marketer working across campaigns, content, events, digital and brand.">
+<meta name="description" content="The marketing portfolio of Zemra Lena — brand, content, digital and experiential work.">
 <link rel="canonical" href="https://zemralena.github.io/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<style>
-:root{--ink:#080808;--bg:#fff;--muted:#666;--line:#d9d9d9;--soft:#f5f5f5}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}img,video{display:block;width:100%}button{font:inherit;color:inherit}
-.progress{position:fixed;top:0;left:0;width:0;height:2px;background:#000;z-index:999}
-nav{position:sticky;top:0;z-index:80;display:flex;justify-content:space-between;align-items:center;padding:17px clamp(20px,4vw,64px);background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.brand{font-size:12px;font-weight:700;letter-spacing:.18em;text-decoration:none}.navlinks{display:flex;gap:27px}.navlinks a{font-size:12px;text-decoration:none}
-main,footer{max-width:1560px;margin:auto}
-.hero{padding:clamp(70px,9vw,138px) clamp(20px,6vw,92px) 66px}
-.eyebrow,.label{font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:700}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) clamp(150px,16vw,235px);gap:clamp(25px,5vw,80px);align-items:start;margin-top:22px}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
-h1{margin:0;text-transform:uppercase;font-size:clamp(68px,10.8vw,170px);line-height:.83;letter-spacing:-.06em}
-.hero-grid h1{font-family:Arial,Helvetica,sans-serif;font-weight:700;letter-spacing:-.04em}
-@media(max-width:560px){.hero-grid h1{font-size:clamp(40px,11.5vw,64px)}}
-.portrait{margin:8px 0 0;transform:rotate(1.2deg)}.portrait img{aspect-ratio:4/5;object-fit:cover}
-.hero-bottom{display:grid;grid-template-columns:minmax(0,680px) auto;gap:50px;align-items:end;margin-top:55px}
-.hero-bottom>p{margin:0;font-size:clamp(17px,1.4vw,21px);line-height:1.5}.contact{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.contact a{width:38px;height:38px;display:grid;place-items:center;border:1px solid #111;text-decoration:none;transition:background .2s ease,color .2s ease}.contact a:hover,.contact a:focus-visible{background:#111;color:#fff}.contact svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.education{margin-top:42px;padding-top:17px;border-top:1px solid #000;display:grid;grid-template-columns:170px 1fr auto;gap:28px;font-size:11px}.education b{font-size:11px}.education span{color:var(--muted)}
-.section{padding:clamp(90px,9vw,150px) clamp(20px,6vw,92px)}.sectionhead{display:flex;justify-content:space-between;align-items:end;padding-bottom:17px;border-bottom:1px solid #000;margin-bottom:48px}.sectionhead h2{margin:0;font-size:clamp(43px,5.8vw,82px);letter-spacing:-.045em;line-height:.93}
-.work-list{display:grid;gap:28px}.work-card{display:grid;grid-template-columns:1.15fr .85fr;border:1px solid #000;text-decoration:none;background:#fff;min-height:510px;overflow:hidden}
-.work-card.reverse{grid-template-columns:.85fr 1.15fr}.work-card.reverse .work-visual{order:2}.work-card.reverse .work-copy{order:1}
-.work-visual{position:relative;overflow:hidden;background:#f4f4f4}.work-visual img,.work-visual video{height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.2,.8,.2,1)}
-.work-card:hover .work-visual img,.work-card:hover .work-visual video{transform:scale(1.025)}
-.loreal-visual{background:#111;color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(34px,5vw,70px)}
-.loreal-visual .logo{width:140px;filter:invert(1)}.campaign-line{font:400 clamp(46px,5vw,80px)/.94 Georgia,"Times New Roman",serif;letter-spacing:-.045em}
-.work-copy{padding:clamp(34px,5vw,70px);display:flex;flex-direction:column;justify-content:center}.work-copy h3{margin:0;font-size:clamp(42px,5vw,76px);line-height:.95;letter-spacing:-.04em}
-.work-type{margin-top:14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.13em}.work-copy>p{margin:24px 0 0;max-width:500px;font-size:14px;line-height:1.6;color:#333}.view{margin-top:34px;font-size:11px;font-weight:700}
-.pipeline-visual img{object-fit:cover}.pipeline-visual:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.02)}
-.experience-list{border-top:1px solid #000}.exp{border-bottom:1px solid var(--line)}.exp-btn{width:100%;display:grid;grid-template-columns:100px 1.2fr .9fr 30px;gap:26px;align-items:center;padding:24px 0;border:0;background:transparent;text-align:left;cursor:pointer;transition:padding .25s ease,background .25s ease}
-.exp-btn:hover{background:#f7f7f7;padding-left:14px;padding-right:14px}.exp-btn h3{font:400 25px/1 Georgia,"Times New Roman",serif;margin:0 0 5px}.exp-btn p{margin:0;font-size:12px;color:#444}.year{font-size:10px;color:var(--muted)}.plus{font-size:20px;text-align:right}
-.exp-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}.exp-inner{overflow:hidden}.exp.open .exp-body{grid-template-rows:1fr}.exp-open{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:60px;padding:4px 0 38px 126px}
-.bullets{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}.bullets li{padding:11px 0;border-bottom:1px solid var(--line);font-size:12px;line-height:1.45}
-.result-wall{border-left:1px solid #000;padding-left:34px;display:grid;grid-template-columns:1fr 1fr;gap:25px 20px;align-content:start}.result strong{display:block;font:400 clamp(31px,3vw,48px)/1 Georgia,"Times New Roman",serif}.result span{display:block;margin-top:5px;font-size:10px;text-transform:uppercase;letter-spacing:.11em;color:var(--muted)}
-.more-buttons{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #000;border-left:1px solid #000}.more-buttons a{padding:32px;border-right:1px solid #000;border-bottom:1px solid #000;text-decoration:none;display:flex;justify-content:space-between;align-items:center}.more-buttons h3{margin:0;font-size:32px}.more-buttons span{font-size:18px}
-.freelance{display:grid;grid-template-columns:1fr .9fr;border:1px solid #000}.freelance-copy{padding:clamp(35px,5vw,72px)}.freelance-copy h2{font-size:clamp(46px,6vw,86px);line-height:.92;letter-spacing:-.045em;margin:10px 0 22px}.freelance-copy p{font-size:14px;line-height:1.6;max-width:560px}.freelance-links{margin-top:30px;display:flex;gap:18px}.freelance-links a{font-size:11px;font-weight:700}.freelance-media{overflow:hidden}.freelance-media img{height:100%;object-fit:cover;transition:transform .6s ease}.freelance:hover .freelance-media img{transform:scale(1.02)}
-footer{padding:90px clamp(20px,6vw,92px) 40px;border-top:1px solid #000}.footer-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}footer h2{margin:8px 0 25px;font-size:clamp(48px,7vw,108px);line-height:.9;letter-spacing:-.05em}.email{font:400 clamp(26px,3.5vw,50px) Georgia,"Times New Roman",serif;text-underline-offset:8px}.footer-contact{display:grid;gap:10px;text-align:right}.footer-contact a{font-size:11px}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.work-visual img,.work-visual video,.exp-body{transition:none}}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr 135px}.hero-bottom{grid-template-columns:1fr}.contact{justify-content:flex-start}.education{grid-template-columns:1fr}.work-card,.work-card.reverse{grid-template-columns:1fr}.work-card.reverse .work-visual,.work-card.reverse .work-copy{order:initial}.work-visual{min-height:420px}.exp-btn{grid-template-columns:80px 1fr 30px}.exp-btn>p{grid-column:2}.plus{grid-column:3;grid-row:1/3}.exp-open{padding-left:106px;grid-template-columns:1fr}.result-wall{border-left:0;border-top:1px solid #000;padding:25px 0 0}.freelance{grid-template-columns:1fr}}
-@media(max-width:560px){nav{padding:15px 18px}.navlinks a:nth-child(2){display:none}.hero,.section,footer{padding-left:18px;padding-right:18px}.hero-grid{grid-template-columns:1fr}.portrait{width:120px;margin-left:auto}h1{font-size:63px}.work-card{min-height:0}.work-visual{min-height:320px}.loreal-visual{min-height:400px}.exp-btn{grid-template-columns:1fr 24px;gap:8px}.year,.exp-btn>div,.exp-btn>p{grid-column:1}.plus{grid-column:2;grid-row:1/4}.exp-open{padding-left:0}.more-buttons{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-contact{text-align:left}}
-
-/* Refinements retain the V5 typography, split compositions and fine rules. */
-.work-card{grid-template-columns:1.25fr .75fr;min-height:0}
-.work-card.reverse{grid-template-columns:.75fr 1.25fr}
-.work-visual{aspect-ratio:1;min-width:0}
-.work-visual img,.work-visual video{position:absolute;inset:0;height:100%;width:100%}
-.work-visual video{object-fit:contain;background:#080808}
-.campaign-visual{aspect-ratio:1114/1400}
-.campaign-visual img{object-fit:cover}
-.athletics-visual img{object-fit:cover}
-.work-copy{padding:clamp(26px,4vw,56px)}
-.work-copy h3{font-size:clamp(38px,4.4vw,66px);text-wrap:balance}
-.work-type{line-height:1.6;max-width:28ch}
-.section{padding-top:clamp(64px,7vw,110px);padding-bottom:clamp(64px,7vw,110px)}
-.exp-btn{grid-template-columns:100px 1fr 30px}
-.role-type{display:block;margin-top:10px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#666}
-.exp-open{grid-template-columns:1fr;gap:20px;padding-right:56px;max-width:1000px}
-.case-link{font-size:12px;text-underline-offset:4px;justify-self:start;padding:10px 0}
-.exp-body{visibility:hidden}.exp.open .exp-body{visibility:visible}
-.more-buttons{grid-template-columns:repeat(3,1fr)}
-.more-buttons h3{font-size:clamp(23px,2.6vw,32px)}
-.motion-toggle{background:white;border:1px solid #080808;padding:12px 16px;font-size:11px;cursor:pointer;flex-shrink:0}
-.sectionhead{gap:24px}.sectionhead h2{text-wrap:balance}
-@media(max-width:900px){.work-card,.work-card.reverse{grid-template-columns:1fr 1fr}.work-card.reverse .work-visual{order:2}.work-card.reverse .work-copy{order:1}.work-visual{min-height:0}.exp-btn{grid-template-columns:80px 1fr 30px}.plus{grid-row:1}.exp-open{padding-left:106px}.more-buttons{grid-template-columns:1fr}}
-@media(max-width:560px){.hero{padding-top:56px}.hero-grid{grid-template-columns:1fr 100px;gap:16px;align-items:center}.portrait{width:100%;margin:0}h1{font-size:clamp(54px,14vw,78px)}.hero-bottom{margin-top:30px;gap:24px}.education{gap:10px;margin-top:28px}.work-card,.work-card.reverse{grid-template-columns:1fr}.work-card.reverse .work-visual,.work-card.reverse .work-copy{order:initial}.work-copy{padding:26px}.work-copy h3{font-size:42px}.view{margin-top:22px}.exp-btn{grid-template-columns:1fr 24px}.plus{grid-row:1/3}.exp-open{padding-left:0;padding-right:0}.sectionhead{align-items:center}.sectionhead h2{font-size:40px}.motion-toggle{padding:10px;font-size:10px}.contact a{padding:10px 0}.navlinks{gap:16px}.navlinks a:nth-child(2){display:block}}
-</style>
-<link rel="stylesheet" href="assets/css/refinements.css?v=20260925-refined">
-<noscript><style>.exp-body{visibility:visible;grid-template-rows:1fr}.exp-btn .plus{display:none}</style></noscript><link rel="stylesheet" href="assets/css/media.css?v=20260925-athletics-fill">
+  <link rel="stylesheet" href="assets/css/home-rebuild.css?v=20260926-85">
 </head>
-<body><a class="skip-link" href="#main-content">Skip to content</a>
-<div class="progress" id="progress"></div>
-<nav><a class="brand" href="#top">ZEMRA LENA</a><div class="navlinks"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div></nav>
-
-<main id="main-content"><span id="top"></span>
-<header class="hero">
-<p class="eyebrow reveal">Portfolio</p>
-<div class="hero-grid">
-  <h1 class="reveal">ZEMRA<br>LENA</h1>
-  <figure class="portrait reveal" data-drift=".035"><img src="assets/headshot.jpg" alt="Zemra Lena" decoding="async" width="1800" height="1800"></figure>
-</div>
-<div class="hero-bottom reveal">
-  <p>I’m a marketer and creative strategist who turns audience insight into campaigns, content and experiences people want to engage with. I want to build thoughtful brand work that connects people, shapes culture and creates measurable growth.</p>
-  <div class="contact" aria-label="Contact links"><a href="mailto:zemralena3@gmail.com" aria-label="Email Zemra Lena"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg><span class="sr-only">Email</span></a><a href="tel:8545880997" aria-label="Call Zemra Lena"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3c-3.5-1.5-6.5-4.5-8-8l3-2z"/></svg><span class="sr-only">Phone</span></a><a href="https://linkedin.com/in/zemralena" target="_blank" rel="noopener" aria-label="Zemra Lena on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9v10M6 5v.01M10 19V9m0 4a4 4 0 0 1 8 0v6M4 9h4M4 19h4"/></svg><span class="sr-only">LinkedIn</span></a></div>
-</div>
-<div class="education education-credential reveal" aria-label="Education"><img class="education-seal" src="assets/logos/penn-state-seal.svg" alt="The Pennsylvania State University seal" width="88" height="88" decoding="async"><div class="education-details"><h2>The Pennsylvania State University</h2><p class="education-college">Smeal College of Business</p><p class="education-degree">Bachelor of Science in Marketing</p></div></div>
-</header>
-
-<section class="section" id="work">
-<div class="sectionhead reveal"><h2>Selected work.</h2></div>
-<div class="work-list">
-
-<a class="work-card reveal" href="work/loreal.html">
-  <div class="work-visual campaign-visual"><img src="assets/work/loreal/prouder.webp" alt="Prouder, Louder, Bolder — Vichy Dercos campaign visual" loading="lazy" decoding="async" width="1114" height="1400"></div>
-  <div class="work-copy">
-    <h3>L’Oréal</h3>
-    <div class="work-type">Beauty Campaign</div>
-
-    <span class="view">View project ↗</span>
-  </div>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="cursor-dot" aria-hidden="true"></div>
+<a class="floating-contact" href="#contact" aria-label="Go to contact section">
+  <img src="assets/photos/zemra-contact-headshot.png" alt="" width="568" height="568">
+  <span>Contact</span>
 </a>
 
-<a class="work-card reverse reveal" href="work/tedx.html">
-  <div class="work-visual">
-    <video muted loop playsinline preload="none" data-motion poster="assets/video/tedx-zeitgeist-poster.jpg"><source src="assets/video/tedx-zeitgeist-motion.mp4" type="video/mp4"></video>
-  </div>
-  <div class="work-copy">
-    <h3>TEDxPSU</h3>
-    <div class="work-type">Marketing Director</div>
+<main id="main-content">
+  <header class="hero" id="top">
+    <h1 aria-label="Zemra Lena">ZEMRA LENA</h1>
+    <div class="hero-meta">
+      <p>Marketing Portfolio</p>
+      <span aria-hidden="true">✦</span>
+      <p>Brand · Content · Digital · Events</p>
+    </div>
+  </header>
 
-    <span class="view">View project ↗</span>
-  </div>
-</a>
+  <section class="featured" id="work" aria-labelledby="work-title">
+    <div class="section-label"><h2 id="work-title">Featured Work</h2></div>
+    <div class="featured-stage" data-active-project="0">
+      <div class="featured-images" aria-hidden="true">
+        <div class="featured-media featured-media--art is-active" data-project="0"><img src="assets/work/loreal/prouder.webp" alt=""></div>
+        <div class="featured-media featured-media--video featured-media--tedx" data-project="1"><video muted loop playsinline preload="metadata" poster="assets/video/tedx-x-landscape.jpg"><source src="assets/video/zeitgeist-landscape.mp4" type="video/mp4"></video></div>
+        <div class="featured-media featured-media--video" data-project="2"><video muted loop playsinline preload="metadata" poster="assets/video/pipeline-film.jpg"><source src="assets/video/pipeline-film.mp4" type="video/mp4"></video></div>
+        <div class="featured-media featured-media--athletics" data-project="3"><img src="assets/logos/psu-athletics.svg" alt=""></div>
+        <div class="featured-media featured-media--evolve" data-project="4"><span aria-hidden="true">e.</span></div>
+      </div>
+      <div class="featured-shade"></div>
+      <div class="featured-links">
+        <a class="is-active" data-project="0" href="work/loreal.html">L’Oréal</a>
+        <a data-project="1" href="work/tedx.html">TEDxPSU</a>
+        <a data-project="2" href="work/pipeline.html">PIPELINE</a>
+        <a data-project="3" href="work/athletics.html">Penn State Athletics</a>
+        <a data-project="4" href="work/evolve.html">Evolve Studio</a>
+      </div>
+    </div>
+  </section>
 
-<a class="work-card reveal" href="work/athletics.html">
-  <div class="work-visual athletics-visual"><img src="assets/work/athletics/potw-schwartz-b.jpg" alt="Penn State Altoona Defensive Player of the Week graphic for Nicole Schwartz" loading="lazy" decoding="async" width="1216" height="682"></div>
-  <div class="work-copy">
-    <h3>Penn State Athletics</h3>
-    <div class="work-type">Photo/Video · Social</div>
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="about-intro">
+      <p class="eyebrow">(About Zemra)</p>
+      <h2 id="about-title">I’m a <span class="about-underline">curious marketer</span> at the beginning of my career, drawn to ideas that connect strategy, culture and design. <span class="about-underline">My love for marketing runs deep</span>—from brand identity and digital campaigns to writing, photography and events. I notice details, follow emerging trends and bring an <span class="about-underline">energetic point of view</span> to every project.</h2>
+    </div>
+    <div class="about-scroll" aria-label="Three facts about Zemra">
+      <div class="about-pin">
+        <div class="fact-track">
+          <article class="fact-panel fact-panel--butter">
+            <figure><img src="assets/photos/zemra-contact-ohrid.jpg" alt="Zemra Lena walking through Ohrid" loading="lazy" width="600" height="600"></figure>
+            <div class="fact-copy"><p class="fact-statement">I’ve visited <strong><span data-count="7">0</span></strong> countries.</p><p class="fact-note">Croatia is next on my list. I hope to travel around the entire world.</p><span>01 / 03</span></div>
+          </article>
+          <article class="fact-panel fact-panel--blue">
+            <figure><img src="assets/photos/DSC06036.webp" alt="Zemra Lena outdoors in an orchard" loading="lazy" width="936" height="1400"></figure>
+            <div class="fact-copy"><p class="fact-statement">I have <strong><span data-count="34">0</span></strong> Pinterest boards.</p><p class="fact-note">And a genuine plan to use all of them.</p><span>02 / 03</span></div>
+          </article>
+          <article class="fact-panel fact-panel--cream">
+            <figure><video autoplay muted loop playsinline preload="metadata" poster="assets/photos/DSC07194.webp" aria-label="Spring in Anchorage, Alaska"><source src="assets/video/alaska-fact-hd.mp4?v=20260926" type="video/mp4"></video></figure>
+            <div class="fact-copy"><p class="fact-statement">I grew up in the <strong><span data-count="49">0</span></strong><span class="fact-suffix">th</span> <span class="fact-following">state.</span></p><p class="fact-note fact-note--alaska">Alaska gave me a lifelong love of big landscapes, long summer days and finding inspiration in unexpected places.</p><span>03 / 03</span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <span class="view">View project ↗</span>
-  </div>
-</a>
+  <section class="capabilities" id="capabilities" aria-labelledby="capabilities-title">
+    <p class="section-heading" id="capabilities-title">Capabilities</p>
+    <div class="capabilities-grid">
+      <article class="capability capability--cream reveal" id="content-creation">
+        <div class="capability-title"><h2>Content Creation</h2><span>(01)</span></div>
+        <div class="capability-copy">
+          <p>Social, video and editorial content built around a clear story.</p>
+          <ul class="capability-tags" aria-label="Content creation specialties"><li>Social Content</li><li>Video Production</li><li>Editorial Storytelling</li><li>Content Strategy</li><li>Short-form Video</li></ul>
+        </div>
+        <div class="phone-showcase" aria-label="Top-performing TEDxPSU and Penn State Athletics social content">
+          <figure class="phone-preview"><div class="phone-screen"><video autoplay muted loop playsinline preload="metadata" poster="assets/video/tedx-invitation-reel.jpg" aria-label="TEDxPSU conference invitation reel with 41.7 thousand views"><source src="assets/video/tedx-invitation-reel.mp4" type="video/mp4"></video></div><figcaption><strong>41.7K</strong> views</figcaption></figure>
+          <figure class="phone-preview"><div class="phone-screen"><video autoplay muted loop playsinline preload="metadata" poster="assets/video/tedx-venue-reel.jpg" aria-label="TEDxPSU venue reel with 25.1 thousand views"><source src="assets/video/tedx-venue-reel.mp4" type="video/mp4"></video></div><figcaption><strong>25.1K</strong> views</figcaption></figure>
+          <figure class="phone-preview"><div class="phone-screen"><video autoplay muted loop playsinline preload="metadata" poster="assets/video/amcc-championship-poster.jpg" aria-label="Penn State Athletics championship reel with 13.5 thousand views"><source src="assets/video/amcc-championship.mp4" type="video/mp4"></video></div><figcaption><strong>13.5K</strong> views</figcaption></figure>
+        </div>
+      </article>
+      <article class="capability capability--yellow reveal" id="brand-identity">
+        <div class="capability-title"><h2>Brand Identity</h2><span>(02)</span></div>
+        <div class="capability-copy">
+          <p>Visual systems that make a brand recognizable and consistent.</p>
+          <ul class="capability-tags" aria-label="Brand identity specialties"><li>Creative Direction</li><li>Brand Guidelines</li><li>Visual Systems</li><li>Logo Systems</li><li>Art Direction</li><li>Brand Consistency</li></ul>
+        </div>
+        <div class="brand-book-flip" aria-label="PIPELINE brand guidelines automatically turning through eighteen pages"><img src="assets/work/pipeline/brand-book/01.webp" alt="PIPELINE brand guideline page 1" loading="lazy"><span aria-hidden="true">01 / 18</span></div>
+      </article>
+      <article class="capability capability--blue reveal" id="campaign-strategy">
+        <div class="capability-title"><h2>Campaign Strategy</h2><span>(03)</span></div>
+        <div class="capability-copy">
+          <p>Research, positioning and concepts that connect each touchpoint.</p>
+          <ul class="capability-tags" aria-label="Campaign strategy specialties"><li>Audience Research</li><li>Positioning</li><li>Campaign Concepts</li><li>Integrated Planning</li></ul>
+        </div>
+        <div class="capability-media capability-media--contain"><img src="assets/work/loreal/billboard.webp" alt="Dercos outdoor advertising campaign installed on a city building" loading="lazy"></div>
+      </article>
+      <article class="capability capability--dark reveal" id="copywriting">
+        <div class="capability-title"><h2>Copywriting</h2><span>(04)</span></div>
+        <div class="capability-copy">
+          <p>Editorial, web, email and campaign copy written with purpose.</p>
+          <ul class="capability-tags" aria-label="Copywriting specialties"><li>Editorial Writing</li><li>Web &amp; Email</li><li>Brand Voice</li><li>Campaign Copy</li><li>Headlines</li><li>Long-form Content</li><li>Content Editing</li></ul>
+        </div>
+        <a class="article-preview" href="work/writing.html" aria-label="Read Zemra Lena's published articles"><img src="assets/work/writing/capstone.jpg" alt="PIPELINE Capstone article preview" loading="lazy"><span>Read the articles <b aria-hidden="true">↗</b></span></a>
+      </article>
+      <article class="capability capability--ocean reveal" id="visual-design">
+        <div class="capability-title"><h2>Visual Design &amp; Photography</h2><span>(05)</span></div>
+        <div class="capability-copy">
+          <p>Photography, campaign graphics and collateral shaped for each channel.</p>
+          <ul class="capability-tags" aria-label="Visual design and photography specialties"><li>Creative Direction</li><li>Professional Photography</li><li>High Quality Images</li><li>Campaign Graphics</li><li>Motion Design</li><li>Photo Editing</li><li>Layout Design</li><li>Visual Storytelling</li></ul>
+        </div>
+        <div class="capability-media-pair"><figure class="photography-rotation" aria-label="PIPELINE program photography by Zemra Lena"><div class="photography-slides"><img class="is-active" src="assets/work/pipeline/P1000704.webp" alt="Students touring an anechoic chamber" loading="lazy"><img src="assets/work/pipeline/P1000719.webp" alt="Interior detail of an anechoic chamber" loading="lazy"><img src="assets/work/pipeline/P1000746.webp" alt="Students touring an engineering research facility" loading="lazy"><img src="assets/work/pipeline/P1000761.webp" alt="PIPELINE students inside a research laboratory" loading="lazy"></div><figcaption>Photography</figcaption></figure><figure><video autoplay muted loop playsinline preload="metadata" poster="assets/video/papertowns-animation.jpg" aria-label="TEDxPSU Paper Towns animation"><source src="assets/video/papertowns-animation.mp4" type="video/mp4"></video><figcaption>Paper Towns animation</figcaption></figure></div>
+      </article>
+    </div>
+  </section>
 
-
-
-<a class="work-card reverse reveal" href="work/pipeline.html"><div class="work-visual pipeline-feature"><img src="assets/video/pipeline-film.jpg" alt="PIPELINE film — hands-on research in a Penn State laboratory" loading="lazy" width="1920" height="1080"><span class="media-tag">Watch the program film ↗</span></div><div class="work-copy"><h3>PIPELINE</h3><div class="work-type">Brand · Web · Content</div><span class="view">View project ↗</span></div></a>
-</div>
-</section>
-
-<section class="section" id="experience">
-<div class="sectionhead reveal"><span class="eyebrow">Experience</span><h2>What I’ve done.</h2></div>
-<div class="experience-list">
-
-<article class="exp reveal">
-<button class="exp-btn" type="button" aria-expanded="false"><span class="year">2024–2026</span><div><h3>PIPELINE Program</h3><p>Marketing & Strategic Communications Intern</p><span class="role-type">Web · Email · Events</span></div><span class="plus" aria-hidden="true">+</span></button>
-<div class="exp-body"><div class="exp-inner"><div class="exp-open">
-<ul class="bullets"><li>Sole marketer across web, social, email, print and events</li><li>Built the first brand book, campaign calendar and newsletter</li><li>Managed Craft CMS, SEO, accessibility and analytics</li><li>Created recruiting, sponsor, event and program materials</li><li>Supported career fairs, Build Nights, ambassadors and mentoring</li></ul><a class="case-link" href="work/pipeline.html">View PIPELINE Program ↗</a>
-</div></div></div></article>
-
-<article class="exp reveal">
-<button class="exp-btn" type="button" aria-expanded="false"><span class="year">2024–2026</span><div><h3>TEDxPSU</h3><p>Marketing · Director of Marketing</p><span class="role-type">Event Social</span></div><span class="plus" aria-hidden="true">+</span></button>
-<div class="exp-body"><div class="exp-inner"><div class="exp-open">
-<ul class="bullets"><li>Led an eight-person marketing team</li><li>Owned social, email, paid, print and campus outreach</li><li>Produced speaker content, interviews and event video</li><li>Coordinated communications for 11 speakers</li><li>Built sponsor materials and reported weekly KPIs</li></ul><a class="case-link" href="work/tedx.html">View TEDxPSU ↗</a>
-</div></div></div></article>
-
-<article class="exp reveal">
-<button class="exp-btn" type="button" aria-expanded="false"><span class="year">2026</span><div><h3>L’Oréal</h3><p>Content & Digital Creative</p><span class="role-type">Beauty Campaign</span></div><span class="plus" aria-hidden="true">+</span></button>
-<div class="exp-body"><div class="exp-inner"><div class="exp-open">
-<ul class="bullets"><li>Led creative development for a 360° U.S. Vichy Dercos campaign</li><li>Used segmentation, focus groups and competitive research</li><li>Created OOH, print, street and experiential concepts</li><li>Built campaign and media planning materials</li><li>Presented weekly to L’Oréal and agency leadership</li></ul><a class="case-link" href="work/loreal.html">View L’Oréal ↗</a>
-</div></div></div></article>
-
-<article class="exp reveal">
-<button class="exp-btn" type="button" aria-expanded="false"><span class="year">2023–2024</span><div><h3>Penn State Athletics</h3><p>Digital Media Specialist</p><span class="role-type">Photo/Video · Social</span></div><span class="plus" aria-hidden="true">+</span></button>
-<div class="exp-body"><div class="exp-inner"><div class="exp-open">
-<ul class="bullets"><li>Produced 50+ photo, video and graphic assets</li><li>Covered four sports and published same-day social content</li><li>Shot DSLR photography and edited in Adobe tools</li><li>Built recurring graphic formats</li><li>Managed captions, publishing and visual archives</li></ul><a class="case-link" href="work/athletics.html">View Penn State Athletics ↗</a>
-</div></div></div></article>
-
-<article class="exp reveal">
-<button class="exp-btn" type="button" aria-expanded="false"><span class="year">2026–now</span><div><h3>Freelance</h3><p>Evolve Studio</p><span class="role-type">Brand · Web</span></div><span class="plus" aria-hidden="true">+</span></button>
-<div class="exp-body"><div class="exp-inner"><div class="exp-open">
-<ul class="bullets"><li>Competitive audits and positioning</li><li>Brand identity and messaging</li><li>Website strategy, design and build</li><li>Social direction and content planning</li><li>Client communication and project delivery</li></ul><a class="case-link" href="work/evolve.html">View client work ↗</a>
-</div></div></div></article>
-
-</div>
-</section>
-
-<section class="section">
-<div class="sectionhead reveal"><span class="eyebrow">More work</span><h2>Explore.</h2></div>
-<div class="more-buttons reveal">
-<a href="work/writing.html"><h3>Published Writing</h3><span>↗</span></a>
-<a href="work/evolve.html"><h3>Client Work</h3><span>↗</span></a>
-</div>
-</section>
-
-<section class="section">
-<div class="freelance reveal">
-<div class="freelance-copy"><span class="eyebrow">Freelance · Evolve Studio</span><h2>Independent work.</h2><p>Brand, web and marketing projects for owner-led businesses, built from research through final delivery.</p><div class="freelance-links"><a href="work/evolve.html">View client work ↗</a><a href="https://evolvestudio.ai" target="_blank" rel="noopener">Evolve Studio ↗</a></div></div>
-<div class="freelance-media"><img src="assets/work/evolve/pho-love-site.jpg" alt="Pho Love website project" decoding="async" width="1273" height="1400"></div>
-</div>
-</section>
+  <footer class="contact" id="contact">
+    <div class="contact-panel">
+      <div class="contact-top"><span>Myrtle Beach, South Carolina</span><time id="local-time">—</time></div>
+      <img class="contact-photo" src="assets/photos/zemra-contact-headshot.png" alt="Portrait of Zemra Lena" loading="lazy" width="568" height="568">
+      <h2><span>Let’s work</span> together.</h2>
+      <div class="contact-links" aria-label="Contact links">
+        <a href="mailto:zemralena3@gmail.com"><span class="contact-link-label">Email me ↗</span><span class="contact-preview contact-preview--email" aria-hidden="true"><span class="email-mark">@</span><span class="email-preview-copy"><small>Email me at</small><strong>zemralena3@gmail.com</strong><em>Click to open your email app</em></span></span></a>
+        <a href="https://linkedin.com/in/zemralena" target="_blank" rel="noopener"><span class="contact-link-label">LinkedIn ↗</span><span class="contact-preview contact-preview--linkedin" aria-hidden="true"><span class="linkedin-preview-bar"><b>in</b><small>Profile</small></span><span class="linkedin-preview-body"><img src="assets/photos/zemra-linkedin.jpg" alt=""><span><strong>Zemra Lena</strong><small>Evolve Studio · Penn State University</small><small>Greater Myrtle Beach Area</small><em>620 followers · 500+ connections</em></span></span></span></a>
+        <a href="https://evolvestudio.ai" target="_blank" rel="noopener"><span class="contact-link-label">Evolve Studio ↗</span><span class="contact-preview contact-preview--site" aria-hidden="true"><img src="assets/work/evolve/evolve-studio-home.png" alt=""><span><small>Creative studio</small><strong>Visit evolvestudio.ai</strong></span></span></a>
+        <a href="assets/documents/zemra-lena-resume.pdf" target="_blank" rel="noopener"><span class="contact-link-label">Resume ↗</span><span class="contact-preview contact-preview--resume" aria-hidden="true"><img src="assets/documents/zemra-lena-resume-preview.png" alt=""><span><small>Resume preview</small><strong>Open the full PDF</strong></span></span></a>
+      </div>
+      <p>©2026 Zemra Lena</p>
+    </div>
+  </footer>
 </main>
 
-<footer id="contact">
-<div class="footer-grid"><div><h2>Let’s work together.</h2><a class="email" href="mailto:zemralena3@gmail.com">zemralena3@gmail.com</a></div><div class="footer-contact"><a href="tel:8545880997">854 588 0997</a><a href="https://linkedin.com/in/zemralena" target="_blank" rel="noopener">LinkedIn</a></div></div>
-</footer>
-
-<script src="assets/js/project.js?v=20260925-media2"></script>
-<script src="assets/js/media.js?v=20260925-media2" defer></script></body>
+<script src="assets/js/home-rebuild.js?v=20260926-20" defer></script>
+</body>
 </html>
