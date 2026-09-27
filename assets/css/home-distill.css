@@ -1,0 +1,36 @@
+/* Reduce interface decoration so the work and imagery lead. */
+body{cursor:default}
+a,button{cursor:pointer}
+
+@media (min-width:761px){
+  .hero-meta{
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .hero-meta p:last-child{
+    justify-self:end;
+  }
+}
+
+.capability-title{
+  display:block;
+}
+
+.capability-tags{
+  column-gap:14px!important;
+  row-gap:8px!important;
+}
+
+.capability-tags li{
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  font-size:12px!important;
+  font-weight:700!important;
+  letter-spacing:.055em!important;
+}
+
+.contact-top{
+  justify-content:flex-start;
+}

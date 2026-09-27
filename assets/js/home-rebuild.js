@@ -46,7 +46,6 @@
   }
 
   const motionAllowed = !matchMedia('(prefers-reduced-motion:reduce)').matches;
-  const finePointer = matchMedia('(pointer:fine)').matches;
 
   const hero = document.querySelector('.hero');
   const heroTitle = hero?.querySelector('h1');
@@ -64,83 +63,6 @@
     window.addEventListener('scroll', positionHeroTitle, { passive: true });
     window.addEventListener('resize', positionHeroTitle);
   }
-  if (motionAllowed && finePointer) {
-    const cursor = document.querySelector('.cursor-dot');
-    let cursorFrame;
-    window.addEventListener('pointermove', (event) => {
-      if (!cursor) return;
-      cancelAnimationFrame(cursorFrame);
-      cursorFrame = requestAnimationFrame(() => {
-        cursor.style.left = `${event.clientX}px`;
-        cursor.style.top = `${event.clientY}px`;
-        cursor.classList.add('is-visible');
-      });
-    }, { passive: true });
-    document.querySelectorAll('a, button, .ribbon-track figure').forEach((element) => {
-      element.addEventListener('pointerenter', () => cursor?.classList.add('is-active'));
-      element.addEventListener('pointerleave', () => cursor?.classList.remove('is-active'));
-    });
-
-    document.querySelectorAll('.ribbon-track figure').forEach((card) => {
-      const image = card.querySelector('img');
-      card.addEventListener('pointermove', (event) => {
-        if (!image) return;
-        const bounds = card.getBoundingClientRect();
-        image.style.setProperty('--card-x', `${((event.clientX - bounds.left) / bounds.width - .5) * 12}px`);
-        image.style.setProperty('--card-y', `${((event.clientY - bounds.top) / bounds.height - .5) * 12}px`);
-      });
-      card.addEventListener('pointerleave', () => {
-        image?.style.setProperty('--card-x', '0px');
-        image?.style.setProperty('--card-y', '0px');
-      });
-    });
-  }
-
-  const contactFloat = document.querySelector('.contact-float');
-  const contactToggle = document.querySelector('#contact-toggle');
-  const contactDock = document.querySelector('.contact-dock');
-  const setContactOpen = (open) => {
-    contactFloat?.classList.toggle('is-open', open);
-    contactToggle?.setAttribute('aria-expanded', String(open));
-    contactDock?.setAttribute('aria-hidden', String(!open));
-    contactDock?.querySelectorAll('a').forEach((link) => { link.tabIndex = open ? 0 : -1; });
-  };
-  setContactOpen(false);
-  contactToggle?.addEventListener('click', () => setContactOpen(!contactFloat?.classList.contains('is-open')));
-  document.addEventListener('pointerdown', (event) => {
-    if (contactFloat && !contactFloat.contains(event.target)) setContactOpen(false);
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setContactOpen(false);
-  });
-
-  const floatingContact = document.querySelector('.floating-contact');
-  if (floatingContact) {
-    let hasAppeared = false;
-    const revealFloatingContact = () => {
-      const pageBottom = window.scrollY + window.innerHeight;
-      const revealPoint = document.documentElement.scrollHeight - 80;
-      if (hasAppeared || pageBottom < revealPoint) return;
-      hasAppeared = true;
-      floatingContact.classList.add('is-visible');
-      window.removeEventListener('scroll', revealFloatingContact);
-    };
-    revealFloatingContact();
-    window.addEventListener('scroll', revealFloatingContact, { passive: true });
-  }
-
-  const time = document.querySelector('#local-time');
-  const updateTime = () => {
-    if (!time) return;
-    time.textContent = new Intl.DateTimeFormat('en-US', {
-      timeZone: 'America/New_York',
-      hour: '2-digit',
-      minute: '2-digit'
-    }).format(new Date());
-  };
-  updateTime();
-  setInterval(updateTime, 60000);
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
