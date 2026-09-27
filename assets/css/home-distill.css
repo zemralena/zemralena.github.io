@@ -133,15 +133,8 @@ body,
   background:#367f9d!important;
   color:var(--cream-surface)!important;
 }
-#content-creation,
-#content-creation .capability-title h2,
-#content-creation .capability-copy>p,
-#content-creation .capability-tags li,
-#content-creation .phone-preview figcaption{
+#content-creation .capability-title h2{
   color:#8f6233!important;
-}
-#brand-identity .capability-title h2{
-  color:#8a6900!important;
 }
 .capability-tags li,
 .capability-tags li:nth-child(n){
