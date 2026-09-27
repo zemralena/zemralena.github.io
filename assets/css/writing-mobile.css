@@ -1,0 +1,37 @@
+@media (max-width:700px){
+  .project-writing .writing-header{
+    min-height:390px;
+    padding:24px 16px 42px;
+  }
+  .project-writing .writing-header .back{
+    min-height:44px;
+    padding:10px 14px;
+    font-size:11px;
+  }
+  .project-writing .writing-header h1{
+    font-size:clamp(52px,15vw,64px);
+    line-height:.9;
+  }
+  .project-writing .writing-header p{
+    margin-top:20px;
+    font-size:18px;
+    line-height:1.22;
+  }
+  .project-writing .writing-index{padding:0 16px 52px}
+  .project-writing .writing-list{gap:10px}
+  .project-writing .writing-list a{
+    min-height:104px;
+    padding:18px;
+    border-radius:15px;
+  }
+  .project-writing .writing-list span{
+    font-size:22px;
+    line-height:1.04;
+  }
+  .project-writing .writing-more{
+    margin-top:18px;
+    padding:22px 18px;
+    border-radius:16px;
+  }
+  .project-writing .writing-more p{font-size:32px}
+}
