@@ -4,8 +4,7 @@
   body{min-width:0}
 
   .hero{
-    --hero-shift:38vh;
-    min-height:126svh;
+    min-height:auto;
     padding:max(8px,env(safe-area-inset-top)) 8px 14px;
   }
   .hero h1{
@@ -19,12 +18,13 @@
   }
   .hero h1 span{display:block}
   .hero-meta{
-    top:clamp(168px,44vw,190px);
+    position:relative;
+    top:auto;
     display:flex;
     flex-direction:column;
     align-items:center;
     gap:3px;
-    margin-top:calc(100svh - 112px);
+    margin-top:12px;
     margin-bottom:0;
     padding:10px 0 9px;
     border-top:0;

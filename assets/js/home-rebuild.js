@@ -47,23 +47,6 @@
 
   const motionAllowed = !matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-  const hero = document.querySelector('.hero');
-  const heroTitle = hero?.querySelector('h1');
-  if (hero && heroTitle && motionAllowed) {
-    let heroFrame;
-    const positionHeroTitle = () => {
-      cancelAnimationFrame(heroFrame);
-      heroFrame = requestAnimationFrame(() => {
-        const progress = Math.min(1, Math.max(0, window.scrollY / (window.innerHeight * .78)));
-        const openingShift = window.innerWidth <= 760 ? 42 : 39;
-        hero.style.setProperty('--hero-shift', `${(1 - progress) * openingShift}vh`);
-      });
-    };
-    positionHeroTitle();
-    window.addEventListener('scroll', positionHeroTitle, { passive: true });
-    window.addEventListener('resize', positionHeroTitle);
-  }
-
   const floatingContact = document.querySelector('.floating-contact');
   const portfolioSection = document.querySelector('#capabilities');
   const finalContactSection = document.querySelector('#contact');

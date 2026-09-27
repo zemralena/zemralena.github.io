@@ -1201,7 +1201,7 @@ body,.hero,.featured,.about,.capabilities,.contact{
 .hero h1{
   position:relative;
   top:auto;
-  transform:none!important;
+  transform:none;
 }
 .hero-meta{
   position:relative;
@@ -1603,46 +1603,59 @@ body,.hero,.featured,.about,.capabilities,.contact{
   .contact-links{opacity:1;transform:none;transition:none}
 }
 
-/* Final name-first opening layer — keep at the end of the cascade. */
+/* Automatic name-first opening: pop in, settle at the top, then reveal the work. */
 .hero{
-  --hero-shift:39vh;
-  min-height:145svh;
+  min-height:auto;
   display:block;
   position:relative;
   padding:10px 16px clamp(22px,3vw,38px);
   overflow:visible;
 }
 .hero h1{
-  position:sticky;
+  position:relative;
   z-index:20;
-  top:10px;
-  transform:translateY(var(--hero-shift))!important;
+  top:auto;
+  transform:none;
   transform-origin:center top;
   will-change:transform;
 }
 .hero-meta{
-  position:sticky;
+  position:relative;
   z-index:19;
-  top:clamp(178px,16.5vw,258px);
-  margin-top:calc(100svh - clamp(110px,16vw,225px) + 52px);
+  top:auto;
+  margin-top:18px;
   margin-bottom:clamp(26px,3vw,42px);
   padding:8px 0 12px;
-  outline:18px solid var(--canvas);
-  box-shadow:0 14px 0 var(--canvas),0 -8px 0 var(--canvas);
+  outline:0;
+  box-shadow:none;
 }
 .featured{padding-top:clamp(30px,4vw,58px)}
 
-@media(max-width:760px){
-  .hero{--hero-shift:42vh;min-height:145svh}
+@media(prefers-reduced-motion:no-preference){
+  .hero h1{
+    animation:hero-name-arrival 1.35s cubic-bezier(.2,.82,.2,1) both;
+  }
   .hero-meta{
-    top:clamp(74px,17vw,120px);
-    margin-top:calc(100svh - clamp(72px,17vw,112px) + 34px);
+    animation:hero-content-arrival .62s cubic-bezier(.16,1,.3,1) .92s both;
+  }
+  .featured{
+    animation:hero-content-arrival .72s cubic-bezier(.16,1,.3,1) 1.08s both;
   }
 }
+
+@keyframes hero-name-arrival{
+  0%{opacity:0;transform:translateY(38vh) scale(.78)}
+  24%{opacity:1;transform:translateY(38vh) scale(1.045)}
+  44%{opacity:1;transform:translateY(38vh) scale(1)}
+  100%{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes hero-content-arrival{
+  from{opacity:0;transform:translateY(28px)}
+  to{opacity:1;transform:none}
+}
+
 @media(prefers-reduced-motion:reduce){
-  .hero{--hero-shift:0;min-height:auto}
-  .hero h1{position:relative;top:auto;transform:none!important}
-  .hero-meta{position:relative;top:auto;margin-top:24px;outline:0;box-shadow:none}
+  .hero h1,.hero-meta,.featured{animation:none;opacity:1;transform:none}
 }
 
 /* Let the Alaska detail read as one continuous thought. */
