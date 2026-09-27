@@ -133,6 +133,9 @@ body,
   background:#367f9d!important;
   color:var(--cream-surface)!important;
 }
+#content-creation .capability-title h2{
+  color:#8f6233!important;
+}
 .capability-tags li,
 .capability-tags li:nth-child(n){
   border:1px solid currentColor!important;
