@@ -27,7 +27,7 @@
     margin-top:calc(100svh - 112px);
     margin-bottom:0;
     padding:10px 0 9px;
-    border-top:1px solid currentColor;
+    border-top:0;
     outline:8px solid var(--canvas);
     box-shadow:none;
     font-size:12px;
@@ -50,7 +50,7 @@
   .section-label h2,.section-heading{font-size:15px;letter-spacing:.01em}
   .featured-stage{
     min-height:500px;
-    border-width:2px;
+    border-width:0;
     border-radius:12px;
   }
   .featured-links{align-items:flex-start;gap:6px;padding:24px 16px}
@@ -107,13 +107,13 @@
     width:100%;
     min-height:0;
     height:auto!important;
-    border-width:2px!important;
+    border-width:0!important;
     border-radius:12px;
   }
   .fact-panel figure{
     height:205px;
     border-right:0;
-    border-bottom:2px solid var(--frame-color);
+    border-bottom:0;
   }
   .fact-copy{
     position:relative;
@@ -175,7 +175,7 @@
   .capability-tags{gap:5px}
   .capability-tags li{
     padding:6px 9px 5px;
-    border-width:1px;
+    border-width:0;
     font-size:9px;
   }
   .capability-tags li:nth-child(n+4){display:none}
@@ -222,7 +222,7 @@
     min-width:0;
     min-height:46px;
     padding:12px 10px;
-    border-width:1px;
+    border-width:0;
     font-size:14px;
   }
   .contact-panel>p{margin:14px 0 0;font-size:10px}

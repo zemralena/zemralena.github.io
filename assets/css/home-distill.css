@@ -36,21 +36,22 @@ a,button{cursor:pointer}
   justify-content:flex-start;
 }
 
-/* Tone-on-tone palette: original light surfaces with deeper matching inks. */
+/* Tone-on-tone palette: darker original hues with their light matching tints. */
 :root{
-  --canvas:#a9cde2;
-  --canvas-ink:#003049;
-  --navy-surface:#dce5f7;
-  --navy-ink:#102f67;
-  --gold-surface:#fff1a8;
-  --gold-ink:#6b5200;
-  --ocean-surface:#c6e3ed;
-  --ocean-ink:#15536c;
-  --cream-surface:#f7f0e4;
-  --cream-ink:#523f3a;
+  --canvas:#003049;
+  --canvas-ink:#a9cde2;
+  --navy-surface:#102f67;
+  --navy-ink:#dce5f7;
+  --gold-surface:#6b5200;
+  --gold-ink:#fff1a8;
+  --ocean-surface:#15536c;
+  --ocean-ink:#c6e3ed;
+  --cream-surface:#523f3a;
+  --cream-ink:#f7f0e4;
   --ink:var(--canvas-ink);
-  --frame:var(--canvas-ink);
-  --frame-color:var(--canvas-ink);
+  --frame:transparent;
+  --frame-color:transparent;
+  --frame-width:0px;
 }
 
 ::selection{background:var(--canvas-ink);color:var(--canvas)}
@@ -79,12 +80,10 @@ body,
 .hero-ribbon{background:var(--canvas)!important}
 .hero h1{box-shadow:0 0 0 18px var(--canvas)}
 .about-underline{background-image:linear-gradient(var(--canvas-ink),var(--canvas-ink))}
-.featured-stage{border-color:var(--canvas-ink);box-shadow:0 0 0 2px var(--canvas-ink)}
+.featured-stage{border:0!important;box-shadow:none!important}
 
-.fact-panel{
-  border-color:currentColor;
-}
-.fact-panel figure{border-color:currentColor}
+.fact-panel{border:0!important}
+.fact-panel figure{border:0!important}
 .fact-panel--butter{
   background:var(--gold-surface);
   color:var(--gold-ink);
@@ -129,27 +128,39 @@ body,
 }
 .capability-tags li,
 .capability-tags li:nth-child(n){
-  border-color:currentColor!important;
-  background:transparent!important;
+  border:0!important;
+  background:rgba(255,255,255,.12)!important;
   color:inherit!important;
 }
 
+.capabilities-grid .capability,
+.capabilities-grid .capability:nth-child(n),
+.brand-book-flip,
+.capability-media,
+.article-preview,
+.capability-media-pair,
+.capability-media-pair>figure,
+.photography-rotation{
+  border:0!important;
+  box-shadow:none!important;
+}
+
 .contact-panel{
-  border-color:var(--cream-ink);
+  border:0!important;
   background:var(--cream-surface);
   color:var(--cream-ink);
 }
 .contact-panel h2,
 .contact-panel h2 span{color:inherit}
-.contact-photo{border-color:currentColor}
+.contact-photo{border:0!important}
 .contact-links a,
-.contact-links a:nth-child(n){border-color:currentColor}
+.contact-links a:nth-child(n){border:0!important;box-shadow:none!important}
 .contact-links a:nth-child(1){background:var(--gold-surface);color:var(--gold-ink)}
 .contact-links a:nth-child(2){background:var(--ocean-surface);color:var(--ocean-ink)}
 .contact-links a:nth-child(3){background:var(--cream-surface);color:var(--cream-ink)}
 .contact-links a:nth-child(4){background:var(--navy-surface);color:var(--navy-ink)}
 .contact-links a:hover,
-.contact-links a:focus-visible{filter:brightness(.96)}
+.contact-links a:focus-visible{filter:brightness(1.08)}
 .contact-links a:nth-child(1):hover,
 .contact-links a:nth-child(1):focus-visible{background:var(--gold-surface)!important;color:var(--gold-ink)!important}
 .contact-links a:nth-child(2):hover,
@@ -160,13 +171,15 @@ body,
 .contact-links a:nth-child(4):focus-visible{background:var(--navy-surface)!important;color:var(--navy-ink)!important}
 
 .floating-contact{
-  border-color:var(--gold-ink);
+  border:0!important;
   background:var(--gold-surface);
   color:var(--gold-ink);
 }
-.floating-contact img{border-color:currentColor}
+.floating-contact img{border:0!important}
 .floating-contact:hover,
 .floating-contact:focus-visible{
   background:var(--ocean-surface);
   color:var(--ocean-ink);
 }
+
+.hero-meta{border:0!important}
