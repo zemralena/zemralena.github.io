@@ -49,15 +49,13 @@
 
   const floatingContact = document.querySelector('.floating-contact');
   const portfolioSection = document.querySelector('#capabilities');
-  const finalContactSection = document.querySelector('#contact');
-  if (floatingContact && portfolioSection && finalContactSection) {
+  if (floatingContact && portfolioSection) {
     let contactFrame;
     const positionFloatingContact = () => {
       cancelAnimationFrame(contactFrame);
       contactFrame = requestAnimationFrame(() => {
         const portfolioIsComplete = portfolioSection.getBoundingClientRect().bottom <= window.innerHeight;
-        const contactIsPrimary = finalContactSection.getBoundingClientRect().top <= window.innerHeight * .42;
-        const shouldShow = window.innerWidth > 760 && portfolioIsComplete && !contactIsPrimary;
+        const shouldShow = portfolioIsComplete;
         floatingContact.classList.toggle('is-visible', shouldShow);
         floatingContact.setAttribute('aria-hidden', String(!shouldShow));
         floatingContact.tabIndex = shouldShow ? 0 : -1;
