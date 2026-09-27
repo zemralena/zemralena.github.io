@@ -48,6 +48,9 @@ a,button{cursor:pointer}
   --ocean-ink:#003049;
   --cream-surface:#fff8e8;
   --cream-ink:#003049;
+  --capability-cream:#f7e6c8;
+  --capability-yellow:#fbe6a0;
+  --capability-copy-blue:#dcebf4;
   --ink:var(--canvas-ink);
   --frame:transparent;
   --frame-color:transparent;
@@ -110,15 +113,15 @@ body,
   color:inherit!important;
 }
 .capabilities-grid .capability.capability--cream{
-  background:var(--cream-surface)!important;
+  background:var(--capability-cream)!important;
   color:var(--cream-ink)!important;
 }
 .capabilities-grid .capability.capability--dark{
-  background:var(--navy-surface)!important;
+  background:var(--capability-copy-blue)!important;
   color:var(--navy-ink)!important;
 }
 .capabilities-grid .capability.capability--yellow{
-  background:var(--gold-surface)!important;
+  background:var(--capability-yellow)!important;
   color:var(--gold-ink)!important;
 }
 .capabilities-grid .capability.capability--blue,
@@ -132,8 +135,8 @@ body,
 }
 .capability-tags li,
 .capability-tags li:nth-child(n){
-  border:0!important;
-  background:rgba(255,255,255,.12)!important;
+  border:1px solid currentColor!important;
+  background:transparent!important;
   color:inherit!important;
 }
 
