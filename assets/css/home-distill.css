@@ -17,18 +17,19 @@ a,button{cursor:pointer}
 }
 
 .capability-tags{
-  column-gap:14px!important;
-  row-gap:8px!important;
+  column-gap:7px!important;
+  row-gap:7px!important;
 }
 
 .capability-tags li{
-  padding:0!important;
-  border:0!important;
-  border-radius:0!important;
+  padding:6px 11px 5px!important;
+  border:1px solid currentColor!important;
+  border-radius:999px!important;
   background:transparent!important;
-  font-size:12px!important;
+  font-size:11px!important;
   font-weight:700!important;
-  letter-spacing:.055em!important;
+  line-height:1.1!important;
+  letter-spacing:.045em!important;
 }
 
 .contact-top{
