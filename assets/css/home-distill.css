@@ -36,18 +36,18 @@ a,button{cursor:pointer}
   justify-content:flex-start;
 }
 
-/* Tone-on-tone palette: darker original hues with their light matching tints. */
+/* Dark canvas with the original light surfaces and their deeper matching inks. */
 :root{
   --canvas:#003049;
   --canvas-ink:#a9cde2;
-  --navy-surface:#102f67;
-  --navy-ink:#dce5f7;
-  --gold-surface:#6b5200;
-  --gold-ink:#fff1a8;
-  --ocean-surface:#15536c;
-  --ocean-ink:#c6e3ed;
-  --cream-surface:#523f3a;
-  --cream-ink:#f7f0e4;
+  --navy-surface:#dce5f7;
+  --navy-ink:#102f67;
+  --gold-surface:#fff1a8;
+  --gold-ink:#6b5200;
+  --ocean-surface:#c6e3ed;
+  --ocean-ink:#15536c;
+  --cream-surface:#f7f0e4;
+  --cream-ink:#523f3a;
   --ink:var(--canvas-ink);
   --frame:transparent;
   --frame-color:transparent;
