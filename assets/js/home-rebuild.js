@@ -64,6 +64,27 @@
     window.addEventListener('resize', positionHeroTitle);
   }
 
+  const floatingContact = document.querySelector('.floating-contact');
+  const portfolioSection = document.querySelector('#capabilities');
+  const finalContactSection = document.querySelector('#contact');
+  if (floatingContact && portfolioSection && finalContactSection) {
+    let contactFrame;
+    const positionFloatingContact = () => {
+      cancelAnimationFrame(contactFrame);
+      contactFrame = requestAnimationFrame(() => {
+        const portfolioIsComplete = portfolioSection.getBoundingClientRect().bottom <= window.innerHeight;
+        const contactIsPrimary = finalContactSection.getBoundingClientRect().top <= window.innerHeight * .42;
+        const shouldShow = window.innerWidth > 760 && portfolioIsComplete && !contactIsPrimary;
+        floatingContact.classList.toggle('is-visible', shouldShow);
+        floatingContact.setAttribute('aria-hidden', String(!shouldShow));
+        floatingContact.tabIndex = shouldShow ? 0 : -1;
+      });
+    };
+    positionFloatingContact();
+    window.addEventListener('scroll', positionFloatingContact, { passive: true });
+    window.addEventListener('resize', positionFloatingContact);
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
