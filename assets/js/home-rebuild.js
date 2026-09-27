@@ -63,6 +63,24 @@
     window.addEventListener('scroll', positionHeroTitle, { passive: true });
     window.addEventListener('resize', positionHeroTitle);
   }
+
+  const floatingContact = document.querySelector('.floating-contact');
+  const floatingContactSection = document.querySelector('#contact');
+  if (floatingContact && floatingContactSection) {
+    let contactFrame;
+    const positionFloatingContact = () => {
+      cancelAnimationFrame(contactFrame);
+      contactFrame = requestAnimationFrame(() => {
+        const hasLeftOpening = window.scrollY > Math.min(420, window.innerHeight * .45);
+        const footerIsVisible = floatingContactSection.getBoundingClientRect().top < window.innerHeight * .82;
+        floatingContact.classList.toggle('is-visible', hasLeftOpening && !footerIsVisible);
+      });
+    };
+    positionFloatingContact();
+    window.addEventListener('scroll', positionFloatingContact, { passive: true });
+    window.addEventListener('resize', positionFloatingContact);
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
