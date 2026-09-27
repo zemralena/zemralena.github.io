@@ -187,3 +187,38 @@ body,
 }
 
 .hero-meta{border:0!important}
+
+/* Preserve true phone proportions and use one rounded language for every visual. */
+.phone-showcase{
+  justify-content:center;
+  overflow:visible;
+}
+.phone-preview,
+.phone-preview:nth-child(n){
+  flex:0 0 auto;
+  width:auto;
+  max-width:none;
+  height:calc(100% - 10px)!important;
+  aspect-ratio:9/19.5;
+}
+
+.brand-book-flip,
+.capability-media,
+.article-preview,
+.capability-media-pair>figure,
+.photography-rotation{
+  border-radius:20px!important;
+  overflow:hidden!important;
+}
+.brand-book-flip>img,
+.capability-media>img,
+.article-preview>img,
+.capability-media-pair>figure>img,
+.capability-media-pair>figure>video,
+.photography-slides{
+  border-radius:inherit!important;
+}
+
+@media(max-width:1100px){
+  #content-creation .phone-preview:nth-child(3){display:none}
+}
