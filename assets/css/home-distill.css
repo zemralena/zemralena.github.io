@@ -258,4 +258,26 @@ body,
     width:88px;
     height:88px;
   }
+
+  .about-scroll.facts-are-optional{
+    height:auto;
+    min-height:0;
+  }
+  .about-scroll.facts-are-optional .about-pin{
+    position:relative;
+    top:auto;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x proximity;
+    overscroll-behavior-inline:contain;
+    scrollbar-color:var(--ocean-surface) transparent;
+    scrollbar-width:thin;
+  }
+  .about-scroll.facts-are-optional .fact-track{
+    transform:none!important;
+    will-change:auto;
+  }
+  .about-scroll.facts-are-optional .fact-panel{
+    scroll-snap-align:start;
+  }
 }

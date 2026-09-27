@@ -83,9 +83,29 @@
   const factTrack = aboutStory?.querySelector('.fact-track');
   if (aboutStory && factTrack && motionAllowed) {
     let aboutFrame;
+    let factsWereCompleted = false;
+    let factsAreOptional = false;
+    let previousScrollY = window.scrollY;
+
+    const makeFactsOptional = () => {
+      const expandedHeight = aboutStory.offsetHeight;
+      aboutStory.classList.add('facts-are-optional');
+      factsAreOptional = true;
+      factTrack.style.transform = 'none';
+
+      const removedHeight = Math.max(0, expandedHeight - aboutStory.offsetHeight);
+      if (removedHeight && window.scrollY > aboutStory.offsetTop) window.scrollBy(0, -removedHeight);
+    };
+
     const positionFacts = () => {
       cancelAnimationFrame(aboutFrame);
       aboutFrame = requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        if (factsAreOptional) {
+          previousScrollY = currentScrollY;
+          return;
+        }
+
         const bounds = aboutStory.getBoundingClientRect();
         const stickyTop = aboutPin ? parseFloat(getComputedStyle(aboutPin).top) || 0 : 0;
         const scrollDistance = Math.max(1, aboutStory.offsetHeight - window.innerHeight);
@@ -97,6 +117,10 @@
         const visibleWidth = aboutPin ? aboutPin.clientWidth - pinPadding : aboutStory.clientWidth;
         const travel = Math.max(0, factTrack.scrollWidth - visibleWidth);
         factTrack.style.transform = `translate3d(${-progress * travel}px,0,0)`;
+
+        if (window.innerWidth > 760 && progress >= .995) factsWereCompleted = true;
+        if (factsWereCompleted && currentScrollY < previousScrollY - 1) makeFactsOptional();
+        previousScrollY = currentScrollY;
       });
     };
     positionFacts();
