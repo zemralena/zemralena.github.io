@@ -35,3 +35,133 @@ a,button{cursor:pointer}
 .contact-top{
   justify-content:flex-start;
 }
+
+/* Tone-on-tone palette: saturated surfaces with their palest matching tint. */
+:root{
+  --canvas:#003049;
+  --canvas-ink:#d9edf7;
+  --navy-surface:#102f67;
+  --navy-ink:#d9edf7;
+  --gold-surface:#7a5a00;
+  --gold-ink:#fff1a8;
+  --ocean-surface:#1f6685;
+  --ocean-ink:#e1f2f8;
+  --ink:var(--canvas-ink);
+  --frame:var(--canvas-ink);
+  --frame-color:var(--canvas-ink);
+}
+
+::selection{background:var(--canvas-ink);color:var(--canvas)}
+
+body,
+.hero,
+.featured,
+.about,
+.capabilities,
+.contact{
+  background:var(--canvas)!important;
+  color:var(--canvas-ink);
+}
+
+.hero h1,
+.hero-meta,
+.section-label,
+.section-heading,
+.eyebrow,
+.about,
+.about>h2{
+  color:var(--canvas-ink);
+}
+.hero h1,
+.hero-meta,
+.hero-ribbon{background:var(--canvas)!important}
+.hero h1{box-shadow:0 0 0 18px var(--canvas)}
+.about-underline{background-image:linear-gradient(var(--canvas-ink),var(--canvas-ink))}
+.featured-stage{border-color:var(--canvas-ink);box-shadow:0 0 0 2px var(--canvas-ink)}
+
+.fact-panel{
+  border-color:currentColor;
+}
+.fact-panel figure{border-color:currentColor}
+.fact-panel--butter{
+  background:var(--gold-surface);
+  color:var(--gold-ink);
+}
+.fact-panel--blue{
+  background:var(--ocean-surface);
+  color:var(--ocean-ink);
+}
+.fact-panel--cream{
+  background:var(--navy-surface);
+  color:var(--navy-ink);
+}
+.fact-panel .fact-copy>p,
+.fact-panel .fact-copy strong,
+.fact-panel--blue .fact-copy strong,
+.fact-panel .fact-suffix,
+.fact-panel .fact-following{color:inherit!important}
+
+.capabilities-grid .capability,
+.capabilities-grid .capability:nth-child(n),
+.capabilities-grid .capability-title h2,
+.capabilities-grid .capability-title span,
+.capability-copy>p{
+  color:inherit!important;
+}
+.capabilities-grid .capability.capability--cream,
+.capabilities-grid .capability.capability--dark{
+  background:var(--navy-surface)!important;
+  color:var(--navy-ink)!important;
+}
+.capabilities-grid .capability.capability--yellow{
+  background:var(--gold-surface)!important;
+  color:var(--gold-ink)!important;
+}
+.capabilities-grid .capability.capability--blue,
+.capabilities-grid .capability.capability--ocean{
+  background:var(--ocean-surface)!important;
+  color:var(--ocean-ink)!important;
+}
+.capability-tags li,
+.capability-tags li:nth-child(n){
+  border-color:currentColor!important;
+  background:transparent!important;
+  color:inherit!important;
+}
+
+.contact-panel{
+  border-color:var(--navy-ink);
+  background:var(--navy-surface);
+  color:var(--navy-ink);
+}
+.contact-panel h2,
+.contact-panel h2 span{color:inherit}
+.contact-photo{border-color:currentColor}
+.contact-links a,
+.contact-links a:nth-child(n){border-color:currentColor}
+.contact-links a:nth-child(1){background:var(--gold-surface);color:var(--gold-ink)}
+.contact-links a:nth-child(2){background:var(--ocean-surface);color:var(--ocean-ink)}
+.contact-links a:nth-child(3){background:var(--canvas);color:var(--canvas-ink)}
+.contact-links a:nth-child(4){background:var(--navy-surface);color:var(--navy-ink)}
+.contact-links a:hover,
+.contact-links a:focus-visible{filter:brightness(1.12)}
+.contact-links a:nth-child(1):hover,
+.contact-links a:nth-child(1):focus-visible{background:var(--gold-surface)!important;color:var(--gold-ink)!important}
+.contact-links a:nth-child(2):hover,
+.contact-links a:nth-child(2):focus-visible{background:var(--ocean-surface)!important;color:var(--ocean-ink)!important}
+.contact-links a:nth-child(3):hover,
+.contact-links a:nth-child(3):focus-visible{background:var(--canvas)!important;color:var(--canvas-ink)!important}
+.contact-links a:nth-child(4):hover,
+.contact-links a:nth-child(4):focus-visible{background:var(--navy-surface)!important;color:var(--navy-ink)!important}
+
+.floating-contact{
+  border-color:var(--gold-ink);
+  background:var(--gold-surface);
+  color:var(--gold-ink);
+}
+.floating-contact img{border-color:currentColor}
+.floating-contact:hover,
+.floating-contact:focus-visible{
+  background:var(--ocean-surface);
+  color:var(--ocean-ink);
+}
