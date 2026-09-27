@@ -51,11 +51,13 @@
   const portfolioSection = document.querySelector('#capabilities');
   if (floatingContact && portfolioSection) {
     let contactFrame;
+    let portfolioWasCompleted = false;
     const positionFloatingContact = () => {
       cancelAnimationFrame(contactFrame);
       contactFrame = requestAnimationFrame(() => {
         const portfolioIsComplete = portfolioSection.getBoundingClientRect().bottom <= window.innerHeight;
-        const shouldShow = portfolioIsComplete;
+        if (portfolioIsComplete) portfolioWasCompleted = true;
+        const shouldShow = portfolioWasCompleted;
         floatingContact.classList.toggle('is-visible', shouldShow);
         floatingContact.setAttribute('aria-hidden', String(!shouldShow));
         floatingContact.tabIndex = shouldShow ? 0 : -1;
