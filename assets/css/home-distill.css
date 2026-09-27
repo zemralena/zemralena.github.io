@@ -231,4 +231,31 @@ body,
   .about-pin{height:min(58svh,520px)}
   .fact-panel,
   .fact-panel:nth-child(n){height:100%!important}
+
+  .contact-preview--email{
+    left:0;
+    width:min(420px,calc(100vw - 64px));
+    grid-template-columns:64px minmax(0,1fr);
+    transform:translate(0,14px) scale(.94);
+    transform-origin:left bottom;
+  }
+  .contact-links>a:hover .contact-preview--email,
+  .contact-links>a:focus-visible .contact-preview--email{
+    transform:translate(0,0) scale(1);
+  }
+  .contact-preview--email .email-preview-copy strong{
+    overflow-wrap:normal;
+    white-space:nowrap;
+  }
+
+  .contact-preview--linkedin{
+    width:min(360px,calc(100vw - 64px));
+  }
+  .linkedin-preview-body{
+    grid-template-columns:88px minmax(0,1fr);
+  }
+  .linkedin-preview-body>img{
+    width:88px;
+    height:88px;
+  }
 }
